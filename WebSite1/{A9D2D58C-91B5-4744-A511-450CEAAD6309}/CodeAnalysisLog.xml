@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 10.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="10.0">
+ <Targets>
+  <Target Name="C:\Users\JuanMa\AppData\Local\Temp\tmp577E.tmp.cadir\bin\App_Web_cppnjzeo.dll">
+   <Modules>
+    <Module Name="app_web_cppnjzeo.dll">
+     <Namespaces>
+      <Namespace Name="ASP">
+       <Types>
+        <Type Name="site_master" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#__BuildControl__control10()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1" File="Site.master" Line="27">En el método 'site_master.__BuildControl__control10()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control11()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1" File="Site.master" Line="28">En el método 'site_master.__BuildControl__control11()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control2()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1" File="Site.master" Line="5">En el método 'site_master.__BuildControl__control2()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control3()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1" File="Site.master" Line="6">En el método 'site_master.__BuildControl__control3()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control5()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1" File="Site.master" Line="8">En el método 'site_master.__BuildControl__control5()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control6()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1" File="Site.master" Line="13">En el método 'site_master.__BuildControl__control6()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control8()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1" File="Site.master" Line="24">En el método 'site_master.__BuildControl__control8()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\JuanMa\AppData\Local\Temp\tmp577E.tmp.cadir\bin\App_Web_igjyzqh4.dll">
+   <Modules>
+    <Module Name="app_web_igjyzqh4.dll">
+     <Namespaces>
+      <Namespace Name="ASP">
+       <Types>
+        <Type Name="account_changepassword_aspx" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#__BuildControl__control10()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="37">En el método 'account_changepassword_aspx.__BuildControl__control10()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control11()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="42">En el método 'account_changepassword_aspx.__BuildControl__control11()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control12()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="43">En el método 'account_changepassword_aspx.__BuildControl__control12()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control13()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="44">En el método 'account_changepassword_aspx.__BuildControl__control13()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control14()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="47">En el método 'account_changepassword_aspx.__BuildControl__control14()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control15()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="53">En el método 'account_changepassword_aspx.__BuildControl__control15()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control16()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="54">En el método 'account_changepassword_aspx.__BuildControl__control16()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control3()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="20">En el método 'account_changepassword_aspx.__BuildControl__control3()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control4()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="22">En el método 'account_changepassword_aspx.__BuildControl__control4()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control5()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="28">En el método 'account_changepassword_aspx.__BuildControl__control5()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control6()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="29">En el método 'account_changepassword_aspx.__BuildControl__control6()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control7()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="30">En el método 'account_changepassword_aspx.__BuildControl__control7()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control8()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="35">En el método 'account_changepassword_aspx.__BuildControl__control8()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control9()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="ChangePassword.aspx" Line="36">En el método 'account_changepassword_aspx.__BuildControl__control9()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="account_login_aspx" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#__BuildControl__control10()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="34">En el método 'account_login_aspx.__BuildControl__control10()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control11()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="39">En el método 'account_login_aspx.__BuildControl__control11()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control12()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="40">En el método 'account_login_aspx.__BuildControl__control12()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control13()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="44">En el método 'account_login_aspx.__BuildControl__control13()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control3()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="17">En el método 'account_login_aspx.__BuildControl__control3()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control4()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="19">En el método 'account_login_aspx.__BuildControl__control4()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control5()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="25">En el método 'account_login_aspx.__BuildControl__control5()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control6()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="26">En el método 'account_login_aspx.__BuildControl__control6()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control7()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="27">En el método 'account_login_aspx.__BuildControl__control7()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control8()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="32">En el método 'account_login_aspx.__BuildControl__control8()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control9()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Login.aspx" Line="33">En el método 'account_login_aspx.__BuildControl__control9()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="account_register_aspx" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#__BuildControl__control10()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="34">En el método 'account_register_aspx.__BuildControl__control10()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control11()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="35">En el método 'account_register_aspx.__BuildControl__control11()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control12()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="40">En el método 'account_register_aspx.__BuildControl__control12()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control13()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="41">En el método 'account_register_aspx.__BuildControl__control13()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control14()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="42">En el método 'account_register_aspx.__BuildControl__control14()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control15()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="47">En el método 'account_register_aspx.__BuildControl__control15()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control16()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="48">En el método 'account_register_aspx.__BuildControl__control16()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control17()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="49">En el método 'account_register_aspx.__BuildControl__control17()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control18()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="54">En el método 'account_register_aspx.__BuildControl__control18()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control19()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="55">En el método 'account_register_aspx.__BuildControl__control19()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control20()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="56">En el método 'account_register_aspx.__BuildControl__control20()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control21()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="59">En el método 'account_register_aspx.__BuildControl__control21()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control22()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="65">En el método 'account_register_aspx.__BuildControl__control22()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control3()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="9">En el método 'account_register_aspx.__BuildControl__control3()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control4()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="10">En el método 'account_register_aspx.__BuildControl__control4()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control7()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="25">En el método 'account_register_aspx.__BuildControl__control7()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control8()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="27">En el método 'account_register_aspx.__BuildControl__control8()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__BuildControl__control9()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-09-19 11:43:44Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\JuanMa\Documents\Visual Studio 2010\WebSites\WebSite1\Account" File="Register.aspx" Line="33">En el método 'account_register_aspx.__BuildControl__control9()', no se elimina (Dispose) el objeto '__ctrl' en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto '__ctrl' antes de que todas las referencias a él estén fuera de ámbito.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Eliminar (Dispose) objetos antes de perder el ámbito" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Eliminar (Dispose) objetos antes de perder el ámbito</Name>
+   <Description>Si un objeto que se puede eliminar (método Dispose) no se elimina de forma explícita antes de que todas las referencias a él estén fuera de ámbito, el objeto se eliminará en algún momento indeterminado cuando el recolector de elementos no utilizados ejecute el finalizador del objeto. Puesto que podría producirse un evento excepcional que impida que se ejecute el finalizador del objeto, el objeto debe eliminarse de forma explícita.</Description>
+   <Resolution Name="ExceptionEdge">En el método {0}, no se elimina (Dispose) el objeto {1} en todas las rutas de acceso de excepciones. Llame a System.IDisposable.Dispose en el objeto {1} antes de que todas las referencias a él estén fuera de ámbito.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>
