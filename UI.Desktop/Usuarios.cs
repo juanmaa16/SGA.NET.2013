@@ -61,6 +61,8 @@ namespace UI.Desktop
             //ud.ShowDialog();
             UsuarioLogic ul = new UsuarioLogic();
             ul.Delete(ID);
+            PersonaLogic pl = new PersonaLogic();
+            pl.Delete(ID);
             this.Listar();
         }
     
