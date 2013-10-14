@@ -38,6 +38,8 @@ namespace UI.Desktop
             _modo=modo;
             UsuarioLogic ul = new UsuarioLogic();
             UsuarioActual = ul.GetOne(ID);
+            PersonaLogic pl = new PersonaLogic();
+            PersonaActual = pl.GetOne(ID);
             this.MapearDeDatos();
             switch(_modo)
             {case ModoForm.Modificacion:
@@ -50,8 +52,6 @@ namespace UI.Desktop
             btnAceptar.Text = "Aceptar";
             break;
             }
-
-
         }
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
@@ -69,6 +69,12 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtClave.Text = this.UsuarioActual.Password;
             this.txtConfirmarClave.Text = this.UsuarioActual.Password;
+            this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
+            this.txtTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
+            this.txtIDPlan.Text = this.PersonaActual.IdPlan.ToString();
+            this.dtpFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToShortDateString();
+            this.txtDireccion.Text = this.PersonaActual.Direccion;
+            this.txtTelefono.Text = this.PersonaActual.Telefono;
         }
 
         public override void MapearADatos() 
@@ -76,6 +82,7 @@ namespace UI.Desktop
             if (_modo == ModoForm.Alta)
             {
                 UsuarioActual=new Usuario();
+                PersonaActual = new Persona();
             }
 
             //UsuarioActual.Id = Convert.ToInt32(txtId.Text.Trim());
@@ -85,20 +92,33 @@ namespace UI.Desktop
             UsuarioActual.Email = txtEmail.Text.Trim();
             UsuarioActual.Password = txtClave.Text.Trim();
             UsuarioActual.Habilitado = chkHabilitado.Checked;
+            PersonaActual.Legajo = Convert.ToInt32(txtLegajo.Text.Trim());
+            PersonaActual.TipoPersona = Persona.TiposPersona.Alumno; //CAMBIAR!!!
+            PersonaActual.IdPlan = Convert.ToInt32(txtIDPlan.Text.Trim());
+            PersonaActual.FechaNacimiento = dtpFechaNacimiento.Value;
+            PersonaActual.Direccion = txtDireccion.Text.Trim();
+            PersonaActual.Telefono = txtTelefono.Text.Trim();
+            PersonaActual.Nombre = txtNombre.Text.Trim();
+            PersonaActual.Apellido = txtApellido.Text.Trim();
+            PersonaActual.Email = txtEmail.Text.Trim();
 
             switch (_modo)
             {
                 case ModoForm.Modificacion:
                     UsuarioActual.State = Usuario.States.Modified;
+                    PersonaActual.State = Persona.States.Modified;
                     break;
                 case ModoForm.Baja:
                     UsuarioActual.State = Usuario.States.Deleted;
+                    PersonaActual.State=Persona.States.Deleted;
                     break;
                 case ModoForm.Consulta:
                     UsuarioActual.State = Usuario.States.Unmodified;
+                    PersonaActual.State=Persona.States.Unmodified;
                     break;
                 case ModoForm.Alta:
                     UsuarioActual.State = Usuario.States.New;
+                    PersonaActual.State=Usuario.States.New;
                     break;
             }
         }
@@ -108,6 +128,8 @@ namespace UI.Desktop
             this.MapearADatos();
             UsuarioLogic ul = new UsuarioLogic();
             ul.Save(UsuarioActual);
+            PersonaLogic pl = new PersonaLogic();
+            pl.Save(PersonaActual);
         }
 
         public override bool Validar()
@@ -177,6 +199,13 @@ namespace UI.Desktop
             set;
         }
 
+        public Persona PersonaActual
+        {
+            get;
+            set;
+        }
+
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Validar())
@@ -192,8 +221,6 @@ namespace UI.Desktop
             this.Close();
         }
 
-
-
-
+        
     }
 }
