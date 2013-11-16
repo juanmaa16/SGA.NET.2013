@@ -120,8 +120,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE cursos set id_materia=@id_materia" +
-                    "anio_calendario=@anio_calendario id_comision=@id_comision cupo=@cupo WHERE id_curso=@id", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE cursos set id_materia=@id_materia," +
+                    "anio_calendario=@anio_calendario, id_comision=@id_comision, cupo=@cupo WHERE id_curso=@id", sqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = curso.IdCurso;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.VarChar, 50).Value = curso.IdMateria;

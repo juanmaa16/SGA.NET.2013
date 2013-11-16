@@ -30,6 +30,11 @@ namespace Negocio
             return uData.GetOne(ID);
         }
 
+        public Usuario GetOneUser(string User)
+        {
+            return uData.GetOneUser(User);
+        }
+
         public void Delete(int ID)
         {
             uData.Delete(ID);

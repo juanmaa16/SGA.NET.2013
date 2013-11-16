@@ -9,17 +9,16 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Usuarios : System.Web.UI.Page
+    public partial class Cursos : System.Web.UI.Page
     {
-
-        UsuarioLogic _logic;
-        private UsuarioLogic Logic
+        CursoLogic _logic;
+        private CursoLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new UsuarioLogic();
+                    _logic = new CursoLogic();
                 }
                 return _logic;
             }
@@ -51,7 +50,7 @@ namespace UI.Web
             get { return (FormModes)this.ViewState["FormMode"]; }
             set { this.ViewState["FormMode"] = value; }
         }
-        private Usuario Entity
+        private Curso Entity
         {
             get;
             set;
@@ -91,11 +90,9 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.emailTextBox.Text = this.Entity.Email;
-            this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.idMateriaTextBox.Text = this.Entity.IdMateria.ToString();
+            this.anioCalendarioTextBox.Text = this.Entity.AnioCalendario.ToString();
+            this.cupoTextBox.Text = this.Entity.Cupo.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -108,19 +105,18 @@ namespace UI.Web
             }
         }
 
-        private void LoadEntity(Usuario usuario)
+        private void LoadEntity(Curso curso)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.emailTextBox.Text;
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Password = this.claveTextBox.Text;
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
+
+            curso.IdMateria = int.Parse(this.idMateriaTextBox.Text);
+            curso.IdComision = int.Parse(this.idComisionTextBox.Text);
+            curso.AnioCalendario = int.Parse(this.anioCalendarioTextBox.Text);
+            curso.Cupo = int.Parse(this.cupoTextBox.Text);
         }
 
-        private void SaveEntity(Usuario usuario)
+        private void SaveEntity(Curso curso)
         {
-            this.Logic.Save(usuario);
+            this.Logic.Save(curso);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -128,7 +124,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Usuario();
+                    this.Entity = new Curso();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -138,8 +134,8 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Usuario();
-                    this.Entity.ID = this.SelectedID;
+                    this.Entity = new Curso();
+                    this.Entity.IdCurso = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
@@ -153,14 +149,10 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
-            this.nombreUsuarioTextBox.Enabled = enable;
-            this.claveTextBox.Visible = enable;
-            this.claveLabel.Visible = enable;
-            this.repetirClaveTextBox.Visible = enable;
-            this.repetirClaveLabel.Visible = enable;
+            this.idMateriaTextBox.Enabled = enable;
+            this.idComisionTextBox.Enabled = enable;
+            this.anioCalendarioTextBox.Enabled = enable;
+            this.anioCalendarioTextBox.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -189,13 +181,10 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.nombreTextBox.Text = string.Empty;
-            this.apellidoTextBox.Text = string.Empty;
-            this.emailTextBox.Text = string.Empty;
-            this.habilitadoCheckBox.Checked = false;
-            this.nombreUsuarioTextBox.Text = string.Empty;
+            this.idMateriaTextBox.Text = string.Empty;
+            this.idComisionTextBox.Text = string.Empty;
+            this.anioCalendarioTextBox.Text = string.Empty;
+            this.cupoTextBox.Text = string.Empty;
         }
-
-
     }
 }

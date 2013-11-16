@@ -25,7 +25,7 @@ namespace UI.Desktop
         {
             //TENEMOS QUE HACER LA VALIDACION, INVOCANDO A LA CAPA DE NEGOCIO, ETC.
             //la propiedad Text de los TextBox contiene el texto escrito en ellos
-            if (this.txtUsuario.Text == "Admin" && this.txtPass.Text == "admin")
+            if (this.txtUsuario.Text == "admin" && this.txtPass.Text == "admin")
             {
                 this.DialogResult = DialogResult.OK;
             }

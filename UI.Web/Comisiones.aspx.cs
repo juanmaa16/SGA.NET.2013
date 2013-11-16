@@ -9,17 +9,17 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Usuarios : System.Web.UI.Page
+    public partial class Comisiones : System.Web.UI.Page
     {
 
-        UsuarioLogic _logic;
-        private UsuarioLogic Logic
+        ComisionLogic _logic;
+        private ComisionLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new UsuarioLogic();
+                    _logic = new ComisionLogic();
                 }
                 return _logic;
             }
@@ -51,7 +51,7 @@ namespace UI.Web
             get { return (FormModes)this.ViewState["FormMode"]; }
             set { this.ViewState["FormMode"] = value; }
         }
-        private Usuario Entity
+        private Comision Entity
         {
             get;
             set;
@@ -91,11 +91,9 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.emailTextBox.Text = this.Entity.Email;
-            this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.idPlanTextBox.Text = this.Entity.IdPlan.ToString();
+            this.anioEspecialidadTextBox.Text = this.Entity.AnioEspecialidad.ToString();
+            this.DescripcionTextBox.Text = this.Entity.Descripcion;
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -108,19 +106,18 @@ namespace UI.Web
             }
         }
 
-        private void LoadEntity(Usuario usuario)
+        private void LoadEntity(Comision comision)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.emailTextBox.Text;
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Password = this.claveTextBox.Text;
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
+
+            comision.IdPlan = int.Parse(this.idPlanTextBox.Text);
+            comision.Descripcion = this.DescripcionTextBox.Text;
+            comision.AnioEspecialidad = int.Parse(this.anioEspecialidadTextBox.Text);
+
         }
 
-        private void SaveEntity(Usuario usuario)
+        private void SaveEntity(Comision comision)
         {
-            this.Logic.Save(usuario);
+            this.Logic.Save(comision);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -128,7 +125,7 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Usuario();
+                    this.Entity = new Comision();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -138,8 +135,8 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Usuario();
-                    this.Entity.ID = this.SelectedID;
+                    this.Entity = new Comision();
+                    this.Entity.IdComision = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
@@ -153,14 +150,10 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
-            this.nombreUsuarioTextBox.Enabled = enable;
-            this.claveTextBox.Visible = enable;
-            this.claveLabel.Visible = enable;
-            this.repetirClaveTextBox.Visible = enable;
-            this.repetirClaveLabel.Visible = enable;
+            this.idPlanTextBox.Enabled = enable;
+            this.DescripcionTextBox.Enabled = enable;
+            this.anioEspecialidadTextBox.Enabled = enable;
+
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -189,13 +182,9 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.nombreTextBox.Text = string.Empty;
-            this.apellidoTextBox.Text = string.Empty;
-            this.emailTextBox.Text = string.Empty;
-            this.habilitadoCheckBox.Checked = false;
-            this.nombreUsuarioTextBox.Text = string.Empty;
+            this.idPlanTextBox.Text = string.Empty;
+            this.DescripcionTextBox.Text = string.Empty;
+            this.anioEspecialidadTextBox.Text = string.Empty;
         }
-
-
     }
 }
