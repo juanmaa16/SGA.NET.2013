@@ -148,11 +148,11 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("insert into cursos(id_materia,id_comision,anio_calendario,cupo)" +
                     "values(@id_materia,@id_comision,@anio_calendario,@cupo) select @@identity AS id_curso", sqlConn);
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = curso.IdCurso;
-                cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.VarChar, 50).Value = curso.IdMateria;
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.VarChar, 50).Value = curso.IdComision;
+                cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
+                curso.IdCurso = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
 
              }
             catch (Exception Ex)
