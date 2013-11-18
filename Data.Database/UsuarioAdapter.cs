@@ -108,7 +108,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where id_usuario=@id", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios usu inner join personas per on per.id_persona=usu.id_persona where id_usuario=@id", sqlConn);
                 cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
@@ -121,6 +121,7 @@ namespace Data.Database
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.Email = (string)drUsuarios["email"];
+                    usr.TipoPersona = (Usuario.TiposPersona)drUsuarios["tipo_persona"];
                 }
                 drUsuarios.Close();
             }
@@ -281,6 +282,29 @@ namespace Data.Database
             {
                 Exception ExcepcionManejada =
                 new Exception("Error al crear el usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+                InsertIdPersona(usuario.ID);
+            }
+        }
+
+        protected void InsertIdPersona(int id)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand("UPDATE usuarios set id_persona=@id_persona WHERE id_usuario=@id", sqlConn);
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = id;
+                cmdSave.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al modificar datos del usuario", Ex);
                 throw ExcepcionManejada;
             }
             finally

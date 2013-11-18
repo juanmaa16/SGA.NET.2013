@@ -121,7 +121,8 @@ namespace Entidades
         public enum TiposPersona
         {
             Alumno,
-            Docente
+            Docente,
+            Administrador
         }
 
 

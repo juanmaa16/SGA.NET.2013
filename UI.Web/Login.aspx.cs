@@ -40,6 +40,9 @@ namespace UI.Web
             this.Entity = this.Logic.GetOneUser(user);
             if (Entity.Password == pass)
             {
+                Session["IdUsuario"] = Entity.ID;
+                Session["NombreUsuario"] = Entity.NombreUsuario;
+                Session["TipoPersona"] = Entity.TipoPersona;
                 return true;
             }
             else

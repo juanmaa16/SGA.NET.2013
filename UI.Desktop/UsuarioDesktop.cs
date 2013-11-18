@@ -27,30 +27,33 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public UsuarioDesktop(ModoForm modo):this()
+        public UsuarioDesktop(ModoForm modo)
+            : this()
         {
             Modo = modo;
             btnAceptar.Text = "Guardar";
         }
 
-        public UsuarioDesktop(ModoForm modo,int ID): this()
+        public UsuarioDesktop(ModoForm modo, int ID)
+            : this()
         {
-            _modo=modo;
+            _modo = modo;
             UsuarioLogic ul = new UsuarioLogic();
             UsuarioActual = ul.GetOne(ID);
             PersonaLogic pl = new PersonaLogic();
             PersonaActual = pl.GetOne(ID);
             this.MapearDeDatos();
-            switch(_modo)
-            {case ModoForm.Modificacion:
-            btnAceptar.Text = "Guardar";
-            break;
-            case ModoForm.Baja:
-            btnAceptar.Text = "Eliminar";
-            break;
-            case ModoForm.Consulta:
-            btnAceptar.Text = "Aceptar";
-            break;
+            switch (_modo)
+            {
+                case ModoForm.Modificacion:
+                    btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Baja:
+                    btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Consulta:
+                    btnAceptar.Text = "Aceptar";
+                    break;
             }
         }
 
@@ -59,7 +62,7 @@ namespace UI.Desktop
 
         }
 
-        public override void MapearDeDatos() 
+        public override void MapearDeDatos()
         {
             this.txtId.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
@@ -77,11 +80,11 @@ namespace UI.Desktop
             this.txtTelefono.Text = this.PersonaActual.Telefono;
         }
 
-        public override void MapearADatos() 
+        public override void MapearADatos()
         {
             if (_modo == ModoForm.Alta)
             {
-                UsuarioActual=new Usuario();
+                UsuarioActual = new Usuario();
                 PersonaActual = new Persona();
             }
 
@@ -110,26 +113,27 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     UsuarioActual.State = Usuario.States.Deleted;
-                    PersonaActual.State=Persona.States.Deleted;
+                    PersonaActual.State = Persona.States.Deleted;
                     break;
                 case ModoForm.Consulta:
                     UsuarioActual.State = Usuario.States.Unmodified;
-                    PersonaActual.State=Persona.States.Unmodified;
+                    PersonaActual.State = Persona.States.Unmodified;
                     break;
                 case ModoForm.Alta:
                     UsuarioActual.State = Usuario.States.New;
-                    PersonaActual.State=Usuario.States.New;
+                    PersonaActual.State = Usuario.States.New;
                     break;
             }
         }
 
-        public override void GuardarCambios() 
+        public override void GuardarCambios()
         {
             this.MapearADatos();
-            UsuarioLogic ul = new UsuarioLogic();
-            ul.Save(UsuarioActual);
             PersonaLogic pl = new PersonaLogic();
             pl.Save(PersonaActual);
+            UsuarioLogic ul = new UsuarioLogic();
+            ul.Save(UsuarioActual);
+
         }
 
         public override bool Validar()
@@ -155,30 +159,30 @@ namespace UI.Desktop
             }
             if (!Utilidades.validaClave(txtClave.Text.Trim()))
             {
-                 mensaje += "- La contraseña no puede estar en blanco";
+                mensaje += "- La contraseña no puede estar en blanco";
             }
             if (!Utilidades.validaClaveCaracteres(txtClave.Text.Trim()))
             {
                 mensaje += "- La contraseña debe tener mas de 8 caracteres\n";
             }
-            if(!Utilidades.validarEmail(txtEmail.Text.Trim()))
+            if (!Utilidades.validarEmail(txtEmail.Text.Trim()))
             {
-                mensaje+="- Ingrese un email valido\n";
+                mensaje += "- Ingrese un email valido\n";
             }
 
             if (mensaje == "")
             {
-            dev = true; 
-            //llamar a notificar para decir que esta todo bien
+                dev = true;
+                //llamar a notificar para decir que esta todo bien
             }
-            else 
+            else
             {
-            dev = false; 
-            //llamar a notificar para decir que esta todo mal
-            MessageBox.Show(mensaje);
+                dev = false;
+                //llamar a notificar para decir que esta todo mal
+                MessageBox.Show(mensaje);
             }
             return dev;
-        
+
         }
 
         public void Notificar(string titulo, string mensaje, MessageBoxButtons
@@ -221,6 +225,6 @@ namespace UI.Desktop
             this.Close();
         }
 
-        
+
     }
 }
