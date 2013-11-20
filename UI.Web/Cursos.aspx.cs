@@ -90,6 +90,7 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
+            this.idComisionTextBox.Text = this.Entity.IdComision.ToString();
             this.idMateriaTextBox.Text = this.Entity.IdMateria.ToString();
             this.anioCalendarioTextBox.Text = this.Entity.AnioCalendario.ToString();
             this.cupoTextBox.Text = this.Entity.Cupo.ToString();
@@ -185,6 +186,22 @@ namespace UI.Web
             this.idComisionTextBox.Text = string.Empty;
             this.anioCalendarioTextBox.Text = string.Empty;
             this.cupoTextBox.Text = string.Empty;
+        }
+        private void cargaModulos()
+        {
+            Usuario.TiposPersona tipoPersona = (Usuario.TiposPersona)Session["TipoPersona"];
+            switch (tipoPersona)
+            {
+                case Usuario.TiposPersona.Alumno:
+                    hlUsuarios.Visible = false;
+                    hlEspecialidades.Visible = false;
+                    hlPlanes.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Docente:
+                    hlUsuarios.Visible = false;
+                    hlPlanes.Visible = false;
+                    break;
+            }
         }
     }
 }

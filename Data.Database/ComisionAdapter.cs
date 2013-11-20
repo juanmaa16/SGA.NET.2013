@@ -57,6 +57,7 @@ namespace Data.Database
                     com.IdComision = (int)drComisiones["id_comision"]; 
                     com.IdPlan = (int)drComisiones["id_plan"];
                     com.AnioEspecialidad= (int)drComisiones["anio_especialidad"];
+                    com.Descripcion = drComisiones["desc_comision"].ToString();
                 }
                 drComisiones.Close();
             }

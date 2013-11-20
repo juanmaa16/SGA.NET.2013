@@ -179,7 +179,22 @@ namespace UI.Web
             this.idEspecialidadTextBox.Text = string.Empty;
         }
 
-
+        private void cargaModulos()
+        {
+            Usuario.TiposPersona tipoPersona = (Usuario.TiposPersona)Session["TipoPersona"];
+            switch (tipoPersona)
+            {
+                case Usuario.TiposPersona.Alumno:
+                    hlUsuarios.Visible = false;
+                    hlEspecialidades.Visible = false;
+                    hlPlanes.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Docente:
+                    hlUsuarios.Visible = false;
+                    hlPlanes.Visible = false;
+                    break;
+            }
+        }
 
     }
 }

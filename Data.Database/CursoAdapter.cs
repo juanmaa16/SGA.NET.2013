@@ -58,7 +58,7 @@ namespace Data.Database
                 {
                     cur.IdCurso = (int)drCursos["id_curso"];
                     cur.IdMateria = (int)drCursos["id_materia"];
-                    cur.IdComision= (int) drCursos["id_comision"];
+                    cur.IdComision= (int)drCursos["id_comision"];
                     cur.AnioCalendario = (int)drCursos["anio_calendario"];
                     cur.Cupo= (int) drCursos["cupo"];
                 }

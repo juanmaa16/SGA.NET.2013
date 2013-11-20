@@ -14,7 +14,6 @@
         <asp:HyperLink ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>
-        <br />
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">

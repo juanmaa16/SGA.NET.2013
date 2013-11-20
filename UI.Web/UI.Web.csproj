@@ -188,6 +188,9 @@
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebUI.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

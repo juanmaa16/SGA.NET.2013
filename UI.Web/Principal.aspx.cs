@@ -8,14 +8,13 @@ using Entidades;
 
 namespace UI.Web
 {
-    public partial class Principal : System.Web.UI.Page
+    public partial class Principal : WebUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.Logueado())
             {
-                Page.Response.Write("No estas registrado");
-                this.PanelPrincipal.Visible = false;
+                Page.Response.Redirect("Login.aspx");
             }
             else
             {
@@ -23,18 +22,6 @@ namespace UI.Web
                 lblUsuario.Text = Session["NombreUsuario"].ToString();
             }
 
-        }
-
-        private bool Logueado()
-        {
-            if (Session["IdUsuario"] == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
 
         private void cargaModulos()
