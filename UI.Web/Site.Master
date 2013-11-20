@@ -1,20 +1,67 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.Site" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Academia</title>
+    <style type="text/css">
+        body
+        {
+            background-color: #B3DD8D;
+        }
+        .style1
+        {
+            width: 100%;
+        }
+        #menu
+        {
+            width: 20%;
+        }
+        #principal
+        {
+            width: 80%;
+        }
+        #header
+        {
+            background-color: #576E4E;
+            height: 93px;
+            padding-left: 20px;
+        }
+        #footer
+        {
+            background-color: #576E4E;
+        }
+    </style>
 </head>
 <body>
-    <form id="bodyForm" runat="server">
-    <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource">
-    </asp:Menu>
-    <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
-    <div>
-    <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
-    </asp:ContentPlaceHolder>
-    </div>
-    </form>
+    <table class="style1">
+        <tr>
+            <td id="header" colspan="2">
+                <asp:HyperLink ID="home" runat="server" ImageUrl="images/sga.png" 
+                    NavigateUrl="~/Principal.aspx"></asp:HyperLink>
+            </td>
+        </tr>
+        <tr id="contenedor">
+            <td id="menu">
+                <asp:ContentPlaceHolder ID="opciones" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td id="principal">
+                <form id="bodyForm" runat="server">
+                <!--<asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource"></asp:Menu>-->
+                <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+                <div>
+                    <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" id="footer">
+                Copyright 2013
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

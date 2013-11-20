@@ -20,6 +20,7 @@ namespace UI.Web
             else
             {
                 this.cargaModulos();
+                lblUsuario.Text = Session["NombreUsuario"].ToString();
             }
 
         }

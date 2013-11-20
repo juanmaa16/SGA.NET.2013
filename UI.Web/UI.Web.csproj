@@ -59,6 +59,7 @@
     <Content Include="Cursos.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Especialidades.aspx" />
+    <Content Include="images\sga.png" />
     <Content Include="Login.aspx" />
     <Content Include="Materias.aspx" />
     <Content Include="Planes.aspx" />

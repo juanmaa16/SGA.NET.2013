@@ -13,6 +13,24 @@ namespace UI.Web {
     public partial class Site {
         
         /// <summary>
+        /// Control home.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink home;
+        
+        /// <summary>
+        /// Control opciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder opciones;
+        
+        /// <summary>
         /// Control bodyForm.
         /// </summary>
         /// <remarks>
