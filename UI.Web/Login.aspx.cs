@@ -42,7 +42,7 @@ namespace UI.Web
             {
                 Session["IdUsuario"] = Entity.ID;
                 Session["NombreUsuario"] = Entity.NombreUsuario;
-                Session["TipoPersona"] = Entity.TipoPersona;
+                Session["TipoPersona"] = (Usuario.TiposPersona)Entity.TipoPersona;
                 return true;
             }
             else

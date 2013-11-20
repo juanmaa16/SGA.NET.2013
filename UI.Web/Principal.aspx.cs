@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
 
 namespace UI.Web
 {
@@ -37,15 +38,15 @@ namespace UI.Web
 
         private void cargaModulos()
         {
-            int tipoPersona = (int)Session["TipoPersona"];
+            Usuario.TiposPersona tipoPersona = (Usuario.TiposPersona)Session["TipoPersona"];
             switch (tipoPersona)
             {
-                case 0:
+                case Usuario.TiposPersona.Alumno:
                     hlUsuarios.Visible = false;
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
                     break;
-                case 1:
+                case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
                     hlPlanes.Visible = false;
                     break;
