@@ -13,7 +13,7 @@
         {
             width: 100%;
         }
-        #menu
+        #menuLateral
         {
             width: 20%;
         }
@@ -42,14 +42,14 @@
             </td>
         </tr>
         <tr id="contenedor">
-            <td id="menu">
+            <td id="menuLateral">
                 <asp:ContentPlaceHolder ID="opciones" runat="server">
                 </asp:ContentPlaceHolder>
             </td>
             <td id="principal">
                 <form id="bodyForm" runat="server">
-                <!--<asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource"></asp:Menu>-->
-                <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+                <!--<asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource"></asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />-->
                 <div>
                     <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
                     </asp:ContentPlaceHolder>

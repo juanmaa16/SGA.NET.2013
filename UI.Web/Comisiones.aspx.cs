@@ -9,7 +9,7 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Comisiones : System.Web.UI.Page
+    public partial class Comisiones : WebUI
     {
 
         ComisionLogic _logic;

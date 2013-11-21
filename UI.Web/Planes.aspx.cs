@@ -9,7 +9,7 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Planes : System.Web.UI.Page
+    public partial class Planes : WebUI
     {
         PlanLogic _logic;
         private PlanLogic Logic

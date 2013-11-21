@@ -9,7 +9,7 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Materias : System.Web.UI.Page
+    public partial class Materias : WebUI
     {
         MateriaLogic _logic;
         private MateriaLogic Logic
@@ -33,9 +33,17 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (!this.Logueado())
             {
-                this.LoadGrid();
+                Page.Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                this.cargaModulos();
+                if (!this.IsPostBack)
+                {
+                    this.LoadGrid();
+                }
             }
         }
 

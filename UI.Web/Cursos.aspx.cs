@@ -9,7 +9,7 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Cursos : System.Web.UI.Page
+    public partial class Cursos : WebUI
     {
         CursoLogic _logic;
         private CursoLogic Logic
