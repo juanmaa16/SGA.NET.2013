@@ -23,7 +23,8 @@
             <Columns>
                 <asp:BoundField HeaderText="IdPlan" DataField="IdPlan" />
                 <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
-                <asp:BoundField HeaderText="IdEspecialidad" DataField="IdEspecialidad" />
+                <asp:BoundField HeaderText="Especialidad" DataField="DescEspecialidad" />
+                <asp:BoundField HeaderText="IdEspecialidad" DataField="IdEspecialidad" Visible="false" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
             </Columns>
         </asp:GridView>
