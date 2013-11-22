@@ -91,7 +91,7 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
-            this.idEspecialidadTextBox.Text = this.Entity.IdEspecialidad.ToString();
+            this.idEspecialidadDDL.Text = this.Entity.IdEspecialidad.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace UI.Web
         private void LoadEntity(Plan plan)
         {
             plan.Descripcion = this.descripcionTextBox.Text;
-            plan.IdEspecialidad = int.Parse(this.idEspecialidadTextBox.Text);
+            plan.IdEspecialidad = int.Parse(this.idEspecialidadDDL.Text);
         }
 
         private void SaveEntity(Plan plan)
@@ -146,7 +146,7 @@ namespace UI.Web
         private void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
-            this.idEspecialidadTextBox.Enabled = enable;
+            this.idEspecialidadDDL.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -176,7 +176,6 @@ namespace UI.Web
         private void ClearForm()
         {
             this.descripcionTextBox.Text = string.Empty;
-            this.idEspecialidadTextBox.Text = string.Empty;
         }
 
         private void cargaModulos()

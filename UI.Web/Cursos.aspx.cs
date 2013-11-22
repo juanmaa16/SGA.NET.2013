@@ -98,8 +98,8 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.idComisionTextBox.Text = this.Entity.IdComision.ToString();
-            this.idMateriaTextBox.Text = this.Entity.IdMateria.ToString();
+            this.idComisionDDL.Text = this.Entity.IdComision.ToString();
+            this.idMateriaDDL.Text = this.Entity.IdMateria.ToString();
             this.anioCalendarioTextBox.Text = this.Entity.AnioCalendario.ToString();
             this.cupoTextBox.Text = this.Entity.Cupo.ToString();
         }
@@ -117,8 +117,8 @@ namespace UI.Web
         private void LoadEntity(Curso curso)
         {
 
-            curso.IdMateria = int.Parse(this.idMateriaTextBox.Text);
-            curso.IdComision = int.Parse(this.idComisionTextBox.Text);
+            curso.IdMateria = int.Parse(this.idMateriaDDL.Text);
+            curso.IdComision = int.Parse(this.idComisionDDL.Text);
             curso.AnioCalendario = int.Parse(this.anioCalendarioTextBox.Text);
             curso.Cupo = int.Parse(this.cupoTextBox.Text);
         }
@@ -158,8 +158,8 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.idMateriaTextBox.Enabled = enable;
-            this.idComisionTextBox.Enabled = enable;
+            this.idMateriaDDL.Enabled = enable;
+            this.idComisionDDL.Enabled = enable;
             this.anioCalendarioTextBox.Enabled = enable;
             this.anioCalendarioTextBox.Enabled = enable;
         }
@@ -190,8 +190,6 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.idMateriaTextBox.Text = string.Empty;
-            this.idComisionTextBox.Text = string.Empty;
             this.anioCalendarioTextBox.Text = string.Empty;
             this.cupoTextBox.Text = string.Empty;
         }

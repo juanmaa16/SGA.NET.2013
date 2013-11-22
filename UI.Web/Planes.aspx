@@ -36,10 +36,14 @@
             Text="*"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="idEspecialidadLabel" runat="server" Text="Id Especialidad: "></asp:Label>
-        <asp:TextBox ID="idEspecialidadTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="idEspecialidadTextBox"
-            ErrorMessage='Ingrese el id de especialidad' EnableClientScript="true" SetFocusOnError="true"
-            Text="*"></asp:RequiredFieldValidator>
+        <asp:DropDownList ID="idEspecialidadDDL" runat="server" 
+            DataSourceID="SqlDataSource1" DataTextField="desc_especialidad" 
+            DataValueField="id_especialidad">
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnStringLocal %>" 
+            SelectCommand="SELECT * FROM [especialidades]"></asp:SqlDataSource>
+        
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

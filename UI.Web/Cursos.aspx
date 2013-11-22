@@ -31,19 +31,27 @@
     </asp:Panel>
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="idMateriaLabel" runat="server" Text="Id Materia: "></asp:Label>
-        <asp:TextBox ID="idMateriaTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="idMateriaTextBox"
-            ErrorMessage='Ingrese id de materia' EnableClientScript="true" SetFocusOnError="true"
-            Text="*"></asp:RequiredFieldValidator>
+        <asp:DropDownList ID="idMateriaDDL" runat="server" 
+            DataSourceID="SqlDataSource1" DataTextField="desc_materia" 
+            DataValueField="id_materia">
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnStringLocal %>" 
+            SelectCommand="SELECT [id_materia], [desc_materia] FROM [materias]">
+        </asp:SqlDataSource>
         <br />
         <asp:Label ID="idComision" runat="server" Text="Id Comisión: "></asp:Label>
-        <asp:TextBox ID="idComisionTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="idComisionTextBox"
-            ErrorMessage='Ingrese id comisión' EnableClientScript="true" SetFocusOnError="true"
-            Text="*"></asp:RequiredFieldValidator>
-        <br />
+        <asp:DropDownList ID="idComisionDDL" runat="server" 
+            DataSourceID="SqlDataSource2" DataTextField="desc_comision" 
+            DataValueField="id_comision">
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnStringLocal %>" 
+            SelectCommand="SELECT [id_comision], [desc_comision] FROM [comisiones]">
+        </asp:SqlDataSource>
+          <br />
         <asp:Label ID="anioCalendario" runat="server" Text="Año (calendario)"></asp:Label>
-        <asp:TextBox ID="anioCalendarioTextBox" runat="server" />
+        <asp:TextBox ID="anioCalendarioTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="anioCalendarioTextBox"
             ErrorMessage='Ingrese el año' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
