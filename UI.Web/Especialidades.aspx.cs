@@ -33,9 +33,17 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (!this.Logueado())
             {
-                this.LoadGrid();
+                Page.Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                this.cargaModulos();
+                if (!this.IsPostBack)
+                {
+                    this.LoadGrid();
+                }
             }
         }
 
@@ -183,10 +191,16 @@ namespace UI.Web
                     hlUsuarios.Visible = false;
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
+                    nuevoLinkButton.Visible = false;
+                    eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
                     hlPlanes.Visible = false;
+                    nuevoLinkButton.Visible = false;
+                    eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     break;
             }
         }

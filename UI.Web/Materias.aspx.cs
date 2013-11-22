@@ -203,12 +203,18 @@ namespace UI.Web
                     hlUsuarios.Visible = false;
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
+                    nuevoLinkButton.Visible = false;
+                    eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
                     hlPlanes.Visible = false;
+                    nuevoLinkButton.Visible = false;
+                    eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     break;
             }
         }
-    }
+     }
 }
