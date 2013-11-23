@@ -8,7 +8,7 @@
 </asp:ScriptManager>
     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
         Font-Size="8pt" InteractiveDeviceInfos="(Colección)" 
-        WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="813px">
+        WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
         <LocalReport ReportPath="Report2.rdlc">
             <DataSources>
                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="Comisiones" />
