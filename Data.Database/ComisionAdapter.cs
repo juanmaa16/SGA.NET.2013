@@ -117,8 +117,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE comisiones set id_plan= @id_plan" +
-                    "anio_especialedad=@anio_especialidad desc_comision=@desc_comision WHERE id_comision=@id", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE comisiones set id_plan= @id_plan," +
+                    "anio_especialidad=@anio_especialidad, desc_comision=@desc_comision WHERE id_comision=@id", sqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = comision.IdComision;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IdPlan;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.VarChar, 50).Value = comision.AnioEspecialidad;

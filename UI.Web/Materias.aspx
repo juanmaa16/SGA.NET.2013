@@ -21,8 +21,8 @@
             SelectedRowStyle-ForeColor="White" DataKeyNames="idMateria" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField HeaderText="idMateria" DataField="idMateria" />
-                <asp:BoundField HeaderText="Plan" DataField="DescPlan" />
                 <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
+                <asp:BoundField HeaderText="Plan" DataField="DescPlan" />
                 <asp:BoundField HeaderText="HSemanales" DataField="HSemanales" />
                 <asp:BoundField HeaderText="HTotales" DataField="HTotales" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />

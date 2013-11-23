@@ -13,7 +13,20 @@ namespace Entidades
         private String _descripcion;
         private int _idComision;
         private int _idMateria;
+        private String _descMat;
+        private String _descCom;
 
+
+        public String DescMat
+        {
+            get { return _descMat; }
+            set { _descMat = value; }
+        }
+        public String DescCom
+        {
+            get { return _descCom; }
+            set { _descCom = value; }
+        }
         public int IdCurso
         {
             get { return _idCurso; }

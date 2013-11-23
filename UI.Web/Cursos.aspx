@@ -21,8 +21,8 @@
             SelectedRowStyle-ForeColor="White" DataKeyNames="idCurso" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField HeaderText="ID Curso" DataField="idCurso" />
-                <asp:BoundField HeaderText="ID Materia" DataField="idMateria" />
-                <asp:BoundField HeaderText="ID Comisión" DataField="idComision" />
+                <asp:BoundField HeaderText="Materia" DataField="descMat" />
+                <asp:BoundField HeaderText="Comisión" DataField="descCom" />
                 <asp:BoundField HeaderText="Año (calendario)" DataField="anioCalendario" />
                 <asp:BoundField HeaderText="Cupo" DataField="cupo" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
