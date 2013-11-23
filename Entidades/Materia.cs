@@ -12,7 +12,13 @@ namespace Entidades
         private int _hTotales;
         private int _idPlan;
         private int _idMateria;
+        private String _descPlan;
 
+        public String DescPlan
+        {
+            get { return _descPlan; }
+            set { _descPlan = value; }
+        }
 
         public int IdMateria
         {

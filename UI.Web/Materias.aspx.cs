@@ -98,7 +98,7 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.idPlanTextBox.Text = this.Entity.IdPlan.ToString();
+            this.idPlanDDL.Text = this.Entity.IdPlan.ToString();
             this.descMateriaTextBox.Text = this.Entity.Descripcion;
             this.hsSemanalesTextBox.Text = this.Entity.HSemanales.ToString();
             this.hsTotalesTextBox.Text = this.Entity.HTotales.ToString();
@@ -116,7 +116,7 @@ namespace UI.Web
 
         private void LoadEntity(Materia materia)
         {
-            materia.IdPlan = int.Parse(this.idPlanTextBox.Text);
+            materia.IdPlan = int.Parse(this.idPlanDDL.Text);
             materia.Descripcion = this.descMateriaTextBox.Text;
             materia.HSemanales = int.Parse(this.hsSemanalesTextBox.Text);
             materia.HTotales = int.Parse(this.hsTotalesTextBox.Text);
@@ -157,7 +157,7 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.idPlanTextBox.Enabled = enable;
+            this.idPlanDDL.Enabled = enable;
             this.descMateriaTextBox.Enabled = enable;
             this.hsSemanalesTextBox.Enabled = enable;
             this.hsTotalesTextBox.Enabled = enable;
@@ -189,7 +189,6 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.idPlanTextBox.Text = string.Empty;
             this.descMateriaTextBox.Text = string.Empty;
             this.hsSemanalesTextBox.Text = string.Empty;
             this.hsTotalesTextBox.Text = string.Empty;
