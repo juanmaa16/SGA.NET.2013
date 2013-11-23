@@ -215,5 +215,13 @@ namespace UI.Web
                     break;
             }
         }
+      
+        protected void cancelarLinkButton_Click1(object sender, EventArgs e)
+        {
+            this.formPanel.Visible = false;
+            this.ClearForm();
+            this.EnableForm(false);
+            //no funciona con nuevo
+        }
      }
 }
