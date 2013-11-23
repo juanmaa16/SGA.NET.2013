@@ -12,22 +12,36 @@ namespace UI.Web
     public partial class Usuarios : WebUI
     {
 
-        UsuarioLogic _logic;
-        private UsuarioLogic Logic
+        UsuarioLogic _logicUsuario;
+        PersonaLogic _logicPersona;
+
+        private UsuarioLogic LogicUsuario
         {
             get
             {
-                if (_logic == null)
+                if (_logicUsuario == null)
                 {
-                    _logic = new UsuarioLogic();
+                    _logicUsuario = new UsuarioLogic();
                 }
-                return _logic;
+                return _logicUsuario;
+            }
+        }
+
+        private PersonaLogic LogicPersona
+        {
+            get
+            {
+                if (_logicPersona == null)
+                {
+                    _logicPersona = new PersonaLogic();
+                }
+                return _logicPersona;
             }
         }
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataSource = this.LogicUsuario.GetAll();
             this.gridView.DataBind();
         }
 
@@ -59,7 +73,12 @@ namespace UI.Web
             get { return (FormModes)this.ViewState["FormMode"]; }
             set { this.ViewState["FormMode"] = value; }
         }
-        private Usuario Entity
+        private Usuario EntityUsuario
+        {
+            get;
+            set;
+        }
+        private Persona EntityPersona
         {
             get;
             set;
@@ -98,12 +117,21 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.emailTextBox.Text = this.Entity.Email;
-            this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.EntityUsuario = this.LogicUsuario.GetOne(id);
+            this.nombreTextBox.Text = this.EntityUsuario.Nombre;
+            this.apellidoTextBox.Text = this.EntityUsuario.Apellido;
+            this.emailTextBox.Text = this.EntityUsuario.Email;
+            this.habilitadoCheckBox.Checked = this.EntityUsuario.Habilitado;
+            this.nombreUsuarioTextBox.Text = this.EntityUsuario.NombreUsuario;
+
+            this.EntityPersona = this.LogicPersona.GetOne(id);
+            this.telefonoTextBox.Text = this.EntityPersona.Telefono;
+            this.direccionTextBox.Text = this.EntityPersona.Direccion;
+            this.fechaNacimientoCalendar.SelectedDate = this.EntityPersona.FechaNacimiento;
+            this.legajoTextBox.Text = this.EntityPersona.Legajo.ToString();
+            this.idPlanTextBox.Text = this.EntityPersona.IdPlan.ToString();
+            //this.TipoPersonaDDL.SelectedValue = ; //TODO: ARREGLAR
+
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -116,7 +144,7 @@ namespace UI.Web
             }
         }
 
-        private void LoadEntity(Usuario usuario)
+        private void LoadEntity(Usuario usuario, Persona persona)
         {
             usuario.Nombre = this.nombreTextBox.Text;
             usuario.Apellido = this.apellidoTextBox.Text;
@@ -124,11 +152,40 @@ namespace UI.Web
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Password = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
+
+            persona.Nombre = this.nombreTextBox.Text;
+            persona.Apellido = this.apellidoTextBox.Text;
+            persona.Direccion = this.direccionTextBox.Text;
+            persona.Email = this.emailTextBox.Text;
+            persona.Telefono = this.telefonoTextBox.Text;
+            persona.FechaNacimiento = this.fechaNacimientoCalendar.SelectedDate;
+            persona.Legajo = int.Parse(this.legajoTextBox.Text);
+            persona.TipoPersona = this.SeleccionaTipoPersona(int.Parse(this.TipoPersonaDDL.SelectedValue));
+            persona.IdPlan = int.Parse(this.idPlanTextBox.Text);
+
         }
 
-        private void SaveEntity(Usuario usuario)
+        private Persona.TiposPersona SeleccionaTipoPersona(int tipoPersonaSelected)
         {
-            this.Logic.Save(usuario);
+            Persona.TiposPersona tipoPersona;
+            switch (tipoPersonaSelected)
+            {
+                case 0: tipoPersona = Persona.TiposPersona.Alumno;
+                    break;
+                case 1: tipoPersona = Persona.TiposPersona.Docente;
+                    break;
+                case 2: tipoPersona = Persona.TiposPersona.Administrador;
+                    break;
+                default: tipoPersona = Persona.TiposPersona.Administrador;
+                    break;
+            }
+            return tipoPersona;
+        }
+
+        private void SaveEntity(Usuario usuario, Persona persona)
+        {
+            this.LogicPersona.Save(persona);
+            this.LogicUsuario.Save(usuario);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -136,9 +193,10 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Usuario();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
+                    this.EntityUsuario = new Usuario();
+                    this.EntityPersona = new Persona();
+                    this.LoadEntity(this.EntityUsuario,this.EntityPersona);
+                    this.SaveEntity(this.EntityUsuario,this.EntityPersona);
                     this.LoadGrid();
                     break;
                 case FormModes.Baja:
@@ -146,11 +204,14 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Usuario();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
+                    this.EntityUsuario = new Usuario();
+                    this.EntityPersona = new Persona();
+                    this.EntityUsuario.ID = this.SelectedID;
+                    this.EntityPersona.IdPersona = this.SelectedID;
+                    this.EntityUsuario.State = BusinessEntity.States.Modified;
+                    this.EntityPersona.State = BusinessEntity.States.Modified;
+                    this.LoadEntity(this.EntityUsuario,this.EntityPersona);
+                    this.SaveEntity(this.EntityUsuario,this.EntityPersona);
                     this.LoadGrid();
                     break;
                 default:
@@ -169,6 +230,14 @@ namespace UI.Web
             this.claveLabel.Visible = enable;
             this.repetirClaveTextBox.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
+
+            this.telefonoTextBox.Enabled = enable;
+            this.direccionTextBox.Enabled = enable;
+            this.fechaNacimientoCalendar.Enabled = enable;
+            this.legajoTextBox.Enabled = enable;
+            this.idPlanTextBox.Enabled = enable;
+            this.TipoPersonaDDL.Enabled = enable;
+
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -184,7 +253,8 @@ namespace UI.Web
 
         private void DeleteEntity(int id)
         {
-            this.Logic.Delete(id);
+            this.LogicUsuario.Delete(id); 
+            this.LogicPersona.Delete(id);           
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
@@ -202,6 +272,10 @@ namespace UI.Web
             this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
+            this.telefonoTextBox.Text = string.Empty;
+            this.direccionTextBox.Text = string.Empty;
+            this.legajoTextBox.Text = string.Empty;
+            this.idPlanTextBox.Text = string.Empty;
         }
 
         private void cargaModulos()

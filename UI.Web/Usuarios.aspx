@@ -49,7 +49,43 @@
             ErrorMessage='Ingrese el mail' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
-        <asp:CheckBox ID="habilitadoCheckBox" runat="server" /><br />
+        <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
+        <br />
+        <asp:Label ID="lblTelefono" runat="server" Text="Telefono: "></asp:Label>
+        <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblDireccion" runat="server" Text="Dirección: "></asp:Label>
+        <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha Nacimiento"></asp:Label>
+        <asp:Calendar ID="fechaNacimientoCalendar" runat="server" BackColor="White" 
+            BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" 
+            Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" 
+            Width="200px">
+            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+            <NextPrevStyle VerticalAlign="Bottom" />
+            <OtherMonthDayStyle ForeColor="#808080" />
+            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+            <SelectorStyle BackColor="#CCCCCC" />
+            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+            <WeekendDayStyle BackColor="#FFFFCC" />
+        </asp:Calendar>
+        <asp:Label ID="lblLegajo" runat="server" Text="Legajo: "></asp:Label>
+        <asp:TextBox ID="legajoTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblIdPlan" runat="server" Text="ID Plan"></asp:Label>
+        <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblTipoPersona" runat="server" Text="Tipo Persona"></asp:Label>
+        <asp:DropDownList ID="TipoPersonaDDL" runat="server">
+            <asp:ListItem Value="0">Alumno</asp:ListItem>
+            <asp:ListItem Value="1">Docente</asp:ListItem>
+            <asp:ListItem Value="2">Administrador</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+        <hr />
+        <br />
         <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
         <asp:TextBox ID="nombreUsuarioTextBox" runat="server" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="nombreUsuarioTextBox"
