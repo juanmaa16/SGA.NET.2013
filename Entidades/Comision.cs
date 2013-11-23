@@ -12,7 +12,14 @@ namespace Entidades
         private int _idPlan;
         private int _idEntidad;
         private int _idComision;
-       
+        private String _descPlan;
+
+        public String DescPlan
+        {
+            get { return _descPlan; }
+            set { _descPlan = value; }
+        } 
+
         public int IdComision
         {
             get { return _idComision; }

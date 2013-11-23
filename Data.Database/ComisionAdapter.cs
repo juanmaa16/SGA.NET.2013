@@ -15,7 +15,7 @@ namespace Data.Database
                 try
                 {
                     this.OpenConnection();
-                    SqlCommand cmdComisiones = new SqlCommand("select * from comisiones", sqlConn);
+                    SqlCommand cmdComisiones = new SqlCommand("select * from comisiones com inner join planes pla on com.id_plan=pla.id_plan", sqlConn);
                     SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
 
                     while (drComisiones.Read())
@@ -23,6 +23,7 @@ namespace Data.Database
                         Comision com = new Comision();
                         com.IdComision= (int)drComisiones["id_comision"];
                         com.IdPlan = (int)drComisiones["id_plan"];
+                        com.DescPlan= (string)drComisiones["desc_plan"];
                         com.Descripcion = (string)drComisiones["desc_comision"];
                         com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
                         comisiones.Add(com);
@@ -48,7 +49,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComisiones = new SqlCommand("select * from comisiones where id_comision=@id", sqlConn);
+                SqlCommand cmdComisiones = new SqlCommand("select * from comisiones com inner join planes pla on com.id_plan=pla.id_plan where id_comision=@id", sqlConn);
                 cmdComisiones.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
 
@@ -56,6 +57,7 @@ namespace Data.Database
                 {
                     com.IdComision = (int)drComisiones["id_comision"]; 
                     com.IdPlan = (int)drComisiones["id_plan"];
+                    com.DescPlan = (string)drComisiones["desc_plan"];
                     com.AnioEspecialidad= (int)drComisiones["anio_especialidad"];
                     com.Descripcion = drComisiones["desc_comision"].ToString();
                 }
