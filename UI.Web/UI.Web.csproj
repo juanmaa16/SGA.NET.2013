@@ -68,6 +68,7 @@
     <Content Include="Planes.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Reporte_comisiones.aspx" />
+    <Content Include="Reporte_especialidades.aspx" />
     <Content Include="Reporte_planes.aspx" />
     <Content Include="Reporte_usuarios.aspx" />
     <Content Include="Styles\Site.css" />
@@ -187,6 +188,13 @@
     <Compile Include="Reporte_comisiones.aspx.designer.cs">
       <DependentUpon>Reporte_comisiones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reporte_especialidades.aspx.cs">
+      <DependentUpon>Reporte_especialidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_especialidades.aspx.designer.cs">
+      <DependentUpon>Reporte_especialidades.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reporte_planes.aspx.cs">
       <DependentUpon>Reporte_planes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,6 +258,7 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="tp2_netDataSet.xsc">
