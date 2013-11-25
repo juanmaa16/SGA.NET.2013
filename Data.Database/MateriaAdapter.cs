@@ -15,7 +15,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMaterias = new SqlCommand("select * from materias", sqlConn);
+                SqlCommand cmdMaterias = new SqlCommand("select * from materias mat inner join planes pla on mat.id_plan=pla.id_plan", sqlConn);
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
 
                 while (drMaterias.Read())
@@ -26,6 +26,7 @@ namespace Data.Database
                     mat.HSemanales = (int)drMaterias["hs_semanales"];
                     mat.HTotales = (int)drMaterias["hs_totales"];
                     mat.IdPlan = (int)drMaterias["id_plan"];
+                    mat.DescPlan = (string)drMaterias["desc_plan"];
                     materias.Add(mat);
                 }
                 drMaterias.Close();
@@ -51,7 +52,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMaterias = new SqlCommand("select * from materias where id_materia=@id", sqlConn);
+                SqlCommand cmdMaterias = new SqlCommand("select * from materias mat inner join planes pla on mat.id_plan=pla.id_plan where id_materia=@id", sqlConn);
                 cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
 
@@ -62,6 +63,8 @@ namespace Data.Database
                     mat.HSemanales = (int)drMaterias["hs_semanales"];
                     mat.HTotales = (int)drMaterias["hs_totales"];
                     mat.IdPlan = (int)drMaterias["id_plan"];
+                    mat.DescPlan=(string)drMaterias["desc_plan"];
+
                 }
                 drMaterias.Close();
             }

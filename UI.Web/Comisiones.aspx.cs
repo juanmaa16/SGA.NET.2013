@@ -99,7 +99,7 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.idPlanTextBox.Text = this.Entity.IdPlan.ToString();
+            this.idPlanDDL.Text = this.Entity.IdPlan.ToString();
             this.anioEspecialidadTextBox.Text = this.Entity.AnioEspecialidad.ToString();
             this.DescripcionTextBox.Text = this.Entity.Descripcion;
         }
@@ -117,7 +117,7 @@ namespace UI.Web
         private void LoadEntity(Comision comision)
         {
 
-            comision.IdPlan = int.Parse(this.idPlanTextBox.Text);
+            comision.IdPlan = int.Parse(this.idPlanDDL.Text);
             comision.Descripcion = this.DescripcionTextBox.Text;
             comision.AnioEspecialidad = int.Parse(this.anioEspecialidadTextBox.Text);
 
@@ -158,7 +158,7 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.idPlanTextBox.Enabled = enable;
+            this.idPlanDDL.Enabled = enable;
             this.DescripcionTextBox.Enabled = enable;
             this.anioEspecialidadTextBox.Enabled = enable;
 
@@ -190,7 +190,6 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.idPlanTextBox.Text = string.Empty;
             this.DescripcionTextBox.Text = string.Empty;
             this.anioEspecialidadTextBox.Text = string.Empty;
         }
@@ -216,6 +215,15 @@ namespace UI.Web
                     editarLinkButton.Visible = false;
                     break;
             }
+        }
+       
+        protected void cancelarLinkButton_Click1(object sender, EventArgs e)
+        {
+
+            this.formPanel.Visible = false;
+            this.ClearForm();
+            this.EnableForm(false);
+            //no funciona con nuevo
         }
     }
 }

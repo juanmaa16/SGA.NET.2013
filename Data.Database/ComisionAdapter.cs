@@ -15,7 +15,7 @@ namespace Data.Database
                 try
                 {
                     this.OpenConnection();
-                    SqlCommand cmdComisiones = new SqlCommand("select * from comisiones", sqlConn);
+                    SqlCommand cmdComisiones = new SqlCommand("select * from comisiones com inner join planes pla on com.id_plan=pla.id_plan", sqlConn);
                     SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
 
                     while (drComisiones.Read())
@@ -23,6 +23,7 @@ namespace Data.Database
                         Comision com = new Comision();
                         com.IdComision= (int)drComisiones["id_comision"];
                         com.IdPlan = (int)drComisiones["id_plan"];
+                        com.DescPlan= (string)drComisiones["desc_plan"];
                         com.Descripcion = (string)drComisiones["desc_comision"];
                         com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
                         comisiones.Add(com);
@@ -48,7 +49,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComisiones = new SqlCommand("select * from comisiones where id_comision=@id", sqlConn);
+                SqlCommand cmdComisiones = new SqlCommand("select * from comisiones com inner join planes pla on com.id_plan=pla.id_plan where id_comision=@id", sqlConn);
                 cmdComisiones.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
 
@@ -56,6 +57,7 @@ namespace Data.Database
                 {
                     com.IdComision = (int)drComisiones["id_comision"]; 
                     com.IdPlan = (int)drComisiones["id_plan"];
+                    com.DescPlan = (string)drComisiones["desc_plan"];
                     com.AnioEspecialidad= (int)drComisiones["anio_especialidad"];
                     com.Descripcion = drComisiones["desc_comision"].ToString();
                 }
@@ -117,8 +119,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE comisiones set id_plan= @id_plan" +
-                    "anio_especialedad=@anio_especialidad desc_comision=@desc_comision WHERE id_comision=@id", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE comisiones set id_plan= @id_plan," +
+                    "anio_especialidad=@anio_especialidad, desc_comision=@desc_comision WHERE id_comision=@id", sqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = comision.IdComision;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IdPlan;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.VarChar, 50).Value = comision.AnioEspecialidad;
