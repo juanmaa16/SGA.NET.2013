@@ -45,7 +45,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDocenteCurso = new SqlCommand("select * from docentes_cursos where id_docente=@id and id_curso=@id_c", sqlConn);
+                SqlCommand cmdDocenteCurso = new SqlCommand("select * from docentes_cursos where id_docente=@id_d and id_curso=@id_c", sqlConn);
                 cmdDocenteCurso.Parameters.Add("@id_d", SqlDbType.Int).Value = ID_D;
                 cmdDocenteCurso.Parameters.Add("@id_c", SqlDbType.Int).Value = ID_C;
                 SqlDataReader drDocentesCursos = cmdDocenteCurso.ExecuteReader();
@@ -70,20 +70,19 @@ namespace Data.Database
             return doc;
         }
 
-        public void Delete(int ID_C, int ID_D)
-        {
+        public void Delete(int ID_D, int ID_C)
+        { 
             try 
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete docentes_cursos where id_docente=@id_d and id_curso=@id_c", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("DELETE docentes_cursos WHERE id_docente=@id_d and id_curso=@id_c", sqlConn);
                 cmdDelete.Parameters.Add("@id_d", SqlDbType.Int).Value = ID_D;
                 cmdDelete.Parameters.Add("@id_c", SqlDbType.Int).Value = ID_C;
                 cmdDelete.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al eliminar el docente curso", Ex);
+                Exception ExcepcionManejada = new Exception("Error al eliminar el docente curso", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -95,7 +94,7 @@ namespace Data.Database
         {
             if (docenteCurso.State == BusinessEntity.States.Deleted)
             {
-                this.Delete(docenteCurso.IdCurso,docenteCurso.IdDocente);
+                this.Delete(docenteCurso.IdDocente, docenteCurso.IdCurso);
             }
             else if (docenteCurso.State == BusinessEntity.States.New)
             {
@@ -113,7 +112,7 @@ namespace Data.Database
             try 
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE docentes_curso set cargo=@cargo WHERE id_docente=@id_d and id_curso=@id_c", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE docentes_cursos set cargo=@cargo WHERE id_docente=@id_d and id_curso=@id_c", sqlConn);
                 cmdSave.Parameters.Add("@id_c", SqlDbType.Int).Value = docenteCurso.IdCurso;
                 cmdSave.Parameters.Add("@id_d", SqlDbType.Int).Value = docenteCurso.IdDocente;
                 cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = docenteCurso.Cargo;
@@ -135,15 +134,15 @@ namespace Data.Database
             try 
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("insert into docentes_curso(cargo) select @@identity AS id_docente and id_curso", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("insert into docentes_cursos(cargo,id_docente,id_curso) values(@cargo, @id_docente, @id_curso)", sqlConn);
                 cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = docenteCurso.Cargo;
-                docenteCurso.IdCurso = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
-                docenteCurso.IdDocente = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());           
-            }
+                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = docenteCurso.IdCurso;
+                cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = docenteCurso.IdDocente;
+                cmdSave.ExecuteScalar();
+             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al crear el docente curso", Ex);
+                Exception ExcepcionManejada = new Exception("Error al crear el docente curso", Ex);
                 throw ExcepcionManejada;
             }
             finally
