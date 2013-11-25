@@ -144,12 +144,13 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("insert into comisiones(id_curso,id_alumno,nota,condicion)" +
+                SqlCommand cmdSave = new SqlCommand("insert into alumnos_inscripciones(id_curso,id_alumno,nota,condicion)" +
                     "values( @id_curso,@id_alumno,@nota,@condicion)", sqlConn);
                 cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = alumnoInscripcion.Nota;
                 cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar).Value = alumnoInscripcion.Condicion;
                 cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = alumnoInscripcion.IdAlumno;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = alumnoInscripcion.IdCurso;
+                cmdSave.ExecuteScalar();
             }
             catch (Exception Ex)
             {
