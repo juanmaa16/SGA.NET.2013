@@ -159,6 +159,7 @@ namespace Data.Database
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.Email = (string)drUsuarios["email"];
                     usr.TipoPersona = (Usuario.TiposPersona)drUsuarios["tipo_persona"];
+                    usr.IdPlan = (int)drUsuarios["id_plan"];
                 }
                 drUsuarios.Close();
             }
