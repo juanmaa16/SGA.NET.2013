@@ -24,6 +24,11 @@ namespace Negocio
             return  cData.GetAll();
         }
 
+        public List<Curso> GetAllInscripcion(int IdPlan)
+        {
+            return cData.GetAllInscripcion(IdPlan);
+        }
+
         public Curso GetOne(int ID)
         {
             return cData.GetOne(ID);

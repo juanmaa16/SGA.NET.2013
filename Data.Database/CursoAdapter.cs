@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Data.Database
 {
-    public class CursoAdapter: Adapter
+    public class CursoAdapter : Adapter
     {
 
         public List<Curso> GetAll()
@@ -27,8 +27,50 @@ namespace Data.Database
                     cur.DescMat = (string)drCursos["desc_materia"];
                     cur.IdComision = (int)drCursos["id_comision"];
                     cur.DescCom = (string)drCursos["desc_comision"];
-                    cur.AnioCalendario= (int) drCursos["anio_calendario"];
-                    cur.Cupo= (int) drCursos ["cupo"];
+                    cur.AnioCalendario = (int)drCursos["anio_calendario"];
+                    cur.Cupo = (int)drCursos["cupo"];
+                    cursos.Add(cur);
+                }
+                drCursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return cursos;
+        }
+
+        public List<Curso> GetAllInscripcion(int IdPlan)
+        {
+            List<Curso> cursos = new List<Curso>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos cur inner join comisiones com " +
+                                                        "on cur.id_comision=com.id_comision inner join materias mat " +
+                                                        "on cur.id_materia=mat.id_materia " +
+                                                        "left join (select id_curso,COUNT(*) cant from alumnos_inscripciones group by id_curso) " +
+                                                        "temp on temp.id_curso=cur.id_curso" +
+                                                        "where mat.id_plan=@id_plan and cur.anio_calendario=@year(getdate()) and temp.cant<cur.cupo;", sqlConn);
+                cmdCursos.Parameters.Add("@id_plan", SqlDbType.Int).Value = IdPlan;
+                SqlDataReader drCursos = cmdCursos.ExecuteReader();
+
+                while (drCursos.Read())
+                {
+                    Curso cur = new Curso();
+                    cur.IdCurso = (int)drCursos["id_curso"];
+                    cur.IdMateria = (int)drCursos["id_materia"];
+                    cur.DescMat = (string)drCursos["desc_materia"];
+                    cur.IdComision = (int)drCursos["id_comision"];
+                    cur.DescCom = (string)drCursos["desc_comision"];
+                    cur.AnioCalendario = (int)drCursos["anio_calendario"];
+                    cur.Cupo = (int)drCursos["cupo"];
                     cursos.Add(cur);
                 }
                 drCursos.Close();
@@ -64,7 +106,7 @@ namespace Data.Database
                     cur.IdComision = (int)drCursos["id_comision"];
                     cur.DescCom = (string)drCursos["desc_comision"];
                     cur.AnioCalendario = (int)drCursos["anio_calendario"];
-                    cur.Cupo= (int) drCursos["cupo"];
+                    cur.Cupo = (int)drCursos["cupo"];
                 }
                 drCursos.Close();
             }
@@ -158,7 +200,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
                 curso.IdCurso = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
 
-             }
+            }
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
