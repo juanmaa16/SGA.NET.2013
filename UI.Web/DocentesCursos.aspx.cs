@@ -206,6 +206,7 @@ namespace UI.Web
             if (this.isEntitySelected)
             {
                 this.formPanel.Visible = false;
+
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID_D, this.SelectedID_C);
