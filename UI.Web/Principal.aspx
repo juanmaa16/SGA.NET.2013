@@ -3,7 +3,7 @@
 
 <asp:Content ID="opciones" ContentPlaceHolderID="opciones" runat="server">
     <asp:Panel ID="PanelPrincipal" runat="server">
-        <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
+        <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/Alumnos.aspx">Alumnos</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlEspecialidades" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink>
         <br />
