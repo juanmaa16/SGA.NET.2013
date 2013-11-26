@@ -41,7 +41,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.CursoLogic.GetAll();
+            this.gridView.DataSource = this.CursoLogic.GetAllInscripcion((int)Session["IdPlan"]);
             this.gridView.DataBind();
         }
 
