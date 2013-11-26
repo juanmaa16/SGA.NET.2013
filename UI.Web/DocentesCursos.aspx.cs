@@ -9,16 +9,16 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Materias : WebUI
+    public partial class DocentesCursos : WebUI
     {
-        MateriaLogic _logic;
-        private MateriaLogic Logic
+        DocenteCursoLogic _logic;
+        private DocenteCursoLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new MateriaLogic();
+                    _logic = new DocenteCursoLogic();
                 }
                 return _logic;
             }
@@ -58,18 +58,18 @@ namespace UI.Web
             get { return (FormModes)this.ViewState["FormMode"]; }
             set { this.ViewState["FormMode"] = value; }
         }
-        private Materia Entity
+        private DocenteCurso Entity
         {
             get;
             set;
         }
-        private int SelectedID
+        private int SelectedID_D
         {
             get
             {
-                if (this.ViewState["SelectedID"] != null)
+                if (this.ViewState["SelectedID_D"] != null)
                 {
-                    return (int)this.ViewState["SelectedID"];
+                    return (int)this.ViewState["SelectedID_D"];
                 }
                 else
                 {
@@ -78,7 +78,25 @@ namespace UI.Web
             }
             set
             {
-                this.ViewState["SelectedID"] = value;
+                this.ViewState["SelectedID_D"] = value;
+            }
+        }
+        private int SelectedID_C
+        {
+            get
+            {
+                if (this.ViewState["SelectedID_C"] != null)
+                {
+                    return (int)this.ViewState["SelectedID_C"];
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                this.ViewState["SelectedID_C"] = value;
             }
         }
 
@@ -86,22 +104,27 @@ namespace UI.Web
         {
             get
             {
-                return (this.SelectedID != 0);
+                return (this.SelectedID_D != 0 && this.SelectedID_C !=0);
             }
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedID = (int)this.gridView.SelectedValue;
+            //this.SelectedID = (int)this.gridView.SelectedValue;
+            var columnasPrim = gridView.DataKeys[gridView.SelectedIndex].Values;
+            int id_d = (int)columnasPrim[0];
+            int id_c = (int)columnasPrim[1];
+            this.SelectedID_D = id_d;
+            this.SelectedID_C = id_c;
+
         }
 
-        private void LoadForm(int id)
+        private void LoadForm(int id_d, int id_c)
         {
-            this.Entity = this.Logic.GetOne(id);
-            this.idPlanDDL.Text = this.Entity.IdPlan.ToString();
-            this.descMateriaTextBox.Text = this.Entity.Descripcion;
-            this.hsSemanalesTextBox.Text = this.Entity.HSemanales.ToString();
-            this.hsTotalesTextBox.Text = this.Entity.HTotales.ToString();
+            this.Entity = this.Logic.GetOne(id_d, id_c);
+            this.IDCursoTextBox.Text = this.Entity.IdCurso.ToString();
+            this.IDDocenteTextBox.Text = this.Entity.IdDocente.ToString(); ;
+         //   this.tipoCargoDDL.Text = this.Entity.Cargo.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -110,21 +133,36 @@ namespace UI.Web
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
-                this.LoadForm(this.SelectedID);
+                this.LoadForm(this.SelectedID_D,this.SelectedID_C);
             }
         }
 
-        private void LoadEntity(Materia materia)
+        private void LoadEntity(DocenteCurso docentecurso)
         {
-            materia.IdPlan = int.Parse(this.idPlanDDL.Text);
-            materia.Descripcion = this.descMateriaTextBox.Text;
-            materia.HSemanales = int.Parse(this.hsSemanalesTextBox.Text);
-            materia.HTotales = int.Parse(this.hsTotalesTextBox.Text);
+
+            docentecurso.IdCurso = int.Parse(this.IDCursoTextBox.Text);
+            docentecurso.IdDocente = int.Parse(this.IDDocenteTextBox.Text);
+            docentecurso.Cargo = this.SeleccionaTipoCargo(int.Parse(this.tipoCargoDDL.SelectedValue));
         }
 
-        private void SaveEntity(Materia materia)
+        private DocenteCurso.TiposCargo SeleccionaTipoCargo(int tipoCargoSelected)
         {
-            this.Logic.Save(materia);
+            DocenteCurso.TiposCargo tipoCargo;
+            switch (tipoCargoSelected)
+            {
+                case 0: tipoCargo = DocenteCurso.TiposCargo.Titular;
+                    break;
+                case 1: tipoCargo = DocenteCurso.TiposCargo.Provisional;
+                    break;
+                default: tipoCargo = DocenteCurso.TiposCargo.Provisional;
+                    break;
+            }
+            return tipoCargo;
+        }
+
+        private void SaveEntity(DocenteCurso docentecurso)
+        {
+            this.Logic.Save(docentecurso);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -132,18 +170,19 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
-                    this.Entity = new Materia();
+                    this.Entity = new DocenteCurso();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
                     break;
                 case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
+                    this.DeleteEntity(this.SelectedID_D,this.SelectedID_C);
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Materia();
-                    this.Entity.IdMateria = this.SelectedID;
+                    this.Entity = new DocenteCurso();
+                    this.Entity.IdDocente = this.SelectedID_D;
+                    this.Entity.IdCurso = this.SelectedID_C;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
@@ -157,10 +196,9 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.idPlanDDL.Enabled = enable;
-            this.descMateriaTextBox.Enabled = enable;
-            this.hsSemanalesTextBox.Enabled = enable;
-            this.hsTotalesTextBox.Enabled = enable;
+            this.IDCursoTextBox.Enabled = enable;
+            this.IDDocenteTextBox.Enabled = enable;
+            this.tipoCargoDDL.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -170,13 +208,13 @@ namespace UI.Web
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
-                this.LoadForm(this.SelectedID);
+                this.LoadForm(this.SelectedID_D, this.SelectedID_C);
             }
         }
 
-        private void DeleteEntity(int id)
+        private void DeleteEntity(int id_d, int id_c)
         {
-            this.Logic.Delete(id);
+            this.Logic.Delete(id_d, id_c);
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
@@ -189,9 +227,8 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.descMateriaTextBox.Text = string.Empty;
-            this.hsSemanalesTextBox.Text = string.Empty;
-            this.hsTotalesTextBox.Text = string.Empty;
+            this.IDCursoTextBox.Text = string.Empty;
+            this.IDDocenteTextBox.Text = string.Empty;
         }
         private void cargaModulos()
         {
@@ -205,7 +242,6 @@ namespace UI.Web
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
-                    hlDocentesCursos.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
@@ -213,17 +249,16 @@ namespace UI.Web
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
-                    hlDocentesCursos.Visible = false;
                     break;
             }
         }
-      
+       
         protected void cancelarLinkButton_Click1(object sender, EventArgs e)
-        {
+       {
             this.formPanel.Visible = false;
             this.ClearForm();
             this.EnableForm(false);
             //no funciona con nuevo
         }
-     }
+    }
 }
