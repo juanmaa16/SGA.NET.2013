@@ -113,7 +113,7 @@ CodeBehind="Profesores.aspx.cs" Inherits="UI.Web.Profesores" %>
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" CausesValidation="False">Cancelar</asp:LinkButton>
         </asp:Panel>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">
