@@ -59,9 +59,11 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="AlumnosInscripciones.aspx" />
+    <Content Include="Alumnos.aspx" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Cursos.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DocentesCursos.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="images\sga.png" />
     <Content Include="Login.aspx" />
@@ -130,6 +132,12 @@
     </Compile>
     <Compile Include="AlumnosInscripciones.aspx.designer.cs">
       <DependentUpon>AlumnosInscripciones.aspx</DependentUpon>
+    <Compile Include="Alumnos.aspx.cs">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos.aspx.designer.cs">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
@@ -151,6 +159,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocentesCursos.aspx.cs">
+      <DependentUpon>DocentesCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocentesCursos.aspx.designer.cs">
+      <DependentUpon>DocentesCursos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Especialidades.aspx.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>

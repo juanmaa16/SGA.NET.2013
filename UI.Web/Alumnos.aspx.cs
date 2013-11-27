@@ -9,9 +9,8 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Usuarios : WebUI
+    public partial class Alumnos : WebUI
     {
-
         UsuarioLogic _logicUsuario;
         PersonaLogic _logicPersona;
 
