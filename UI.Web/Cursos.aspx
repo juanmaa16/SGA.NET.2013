@@ -59,7 +59,7 @@
             ErrorMessage='Ingrese el año' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="cupoLabel" runat="server" Text="cupo: "></asp:Label>
+        <asp:Label ID="cupoLabel" runat="server" Text="cupo: " style="height: 19px"></asp:Label>
         <asp:TextBox ID="cupoTextBox" runat="server" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="cupoTextBox"
             ErrorMessage='Ingrese el cupo' EnableClientScript="true" SetFocusOnError="true"
@@ -67,7 +67,7 @@
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click" CausesValidation="False">Cancelar</asp:LinkButton>
         </asp:Panel>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">
