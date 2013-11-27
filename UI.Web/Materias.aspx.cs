@@ -214,10 +214,17 @@ namespace UI.Web
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
                     hlDocentesCursos.Visible = false;
+<<<<<<< HEAD
+=======
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
+>>>>>>> origin/web-1.1-juanma
                     break;
             }
         }
-      
+
         protected void cancelarLinkButton_Click1(object sender, EventArgs e)
         {
             this.formPanel.Visible = false;
@@ -225,5 +232,5 @@ namespace UI.Web
             this.EnableForm(false);
             //no funciona con nuevo
         }
-     }
+    }
 }

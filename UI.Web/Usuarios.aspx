@@ -16,6 +16,10 @@
         <asp:HyperLink ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscribirse a materia</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlDocentesCursos" runat="server" NavigateUrl="~/DocentesCursos.aspx">Asignar docente</asp:HyperLink>
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
@@ -60,10 +64,9 @@
         <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha Nacimiento"></asp:Label>
-        <asp:Calendar ID="fechaNacimientoCalendar" runat="server" BackColor="White" 
-            BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" 
-            Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" 
-            Width="200px">
+        <asp:Calendar ID="fechaNacimientoCalendar" runat="server" BackColor="White" BorderColor="#999999"
+            CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt"
+            ForeColor="Black" Height="180px" Width="200px">
             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
             <NextPrevStyle VerticalAlign="Bottom" />
             <OtherMonthDayStyle ForeColor="#808080" />

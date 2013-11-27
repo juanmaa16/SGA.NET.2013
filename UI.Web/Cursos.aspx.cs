@@ -214,6 +214,14 @@ namespace UI.Web
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
                     hlDocentesCursos.Visible = false;
+<<<<<<< HEAD
+=======
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+>>>>>>> origin/web-1.1-juanma
                     break;
             }
         }

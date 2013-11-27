@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="Especialidades.aspx.cs" Inherits="UI.Web.Especialidades" %>
-    <asp:Content ID="opciones" ContentPlaceHolderID="opciones" runat="server">
+
+<asp:Content ID="opciones" ContentPlaceHolderID="opciones" runat="server">
     <asp:Panel ID="PanelPrincipal" runat="server">
         <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
         <br />
@@ -15,6 +16,10 @@
         <asp:HyperLink ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscribirse a materia</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlDocentesCursos" runat="server" NavigateUrl="~/DocentesCursos.aspx">Asignar docente</asp:HyperLink>
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
@@ -37,8 +42,7 @@
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server" 
-                onclick="cancelarLinkButton_Click1">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click1">Cancelar</asp:LinkButton>
         </asp:Panel>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">

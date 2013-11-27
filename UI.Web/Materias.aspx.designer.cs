@@ -85,6 +85,24 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.HyperLink hlComisiones;
         
         /// <summary>
+        /// Control hlAlumnosInscripciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlAlumnosInscripciones;
+        
+        /// <summary>
+        /// Control hlDocentesCursos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlDocentesCursos;
+        
+        /// <summary>
         /// Control gridPanel.
         /// </summary>
         /// <remarks>

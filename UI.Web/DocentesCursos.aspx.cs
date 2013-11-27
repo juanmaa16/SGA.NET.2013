@@ -104,7 +104,11 @@ namespace UI.Web
         {
             get
             {
+<<<<<<< HEAD
                 return (this.SelectedID_D != 0 && this.SelectedID_C !=0);
+=======
+                return (this.SelectedID_D != 0 && this.SelectedID_C != 0);
+>>>>>>> origin/web-1.1-juanma
             }
         }
 
@@ -124,7 +128,11 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id_d, id_c);
             this.IDCursoTextBox.Text = this.Entity.IdCurso.ToString();
             this.IDDocenteTextBox.Text = this.Entity.IdDocente.ToString(); ;
+<<<<<<< HEAD
          //   this.tipoCargoDDL.Text = this.Entity.Cargo.ToString();
+=======
+            //   this.tipoCargoDDL.Text = this.Entity.Cargo.ToString();
+>>>>>>> origin/web-1.1-juanma
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -133,7 +141,11 @@ namespace UI.Web
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
+<<<<<<< HEAD
                 this.LoadForm(this.SelectedID_D,this.SelectedID_C);
+=======
+                this.LoadForm(this.SelectedID_D, this.SelectedID_C);
+>>>>>>> origin/web-1.1-juanma
             }
         }
 
@@ -176,7 +188,11 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Baja:
+<<<<<<< HEAD
                     this.DeleteEntity(this.SelectedID_D,this.SelectedID_C);
+=======
+                    this.DeleteEntity(this.SelectedID_D, this.SelectedID_C);
+>>>>>>> origin/web-1.1-juanma
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
@@ -242,6 +258,10 @@ namespace UI.Web
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
+<<<<<<< HEAD
+=======
+                    hlDocentesCursos.Visible = false;
+>>>>>>> origin/web-1.1-juanma
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
@@ -249,12 +269,27 @@ namespace UI.Web
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
+<<<<<<< HEAD
                     break;
             }
         }
        
         protected void cancelarLinkButton_Click1(object sender, EventArgs e)
        {
+=======
+                    hlDocentesCursos.Visible = false;
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                    break;
+            }
+        }
+
+        protected void cancelarLinkButton_Click1(object sender, EventArgs e)
+        {
+>>>>>>> origin/web-1.1-juanma
             this.formPanel.Visible = false;
             this.ClearForm();
             this.EnableForm(false);

@@ -193,6 +193,13 @@ namespace UI.Web
                     hlUsuarios.Visible = false;
                     hlPlanes.Visible = false;
                     hlDocentesCursos.Visible = false;
+<<<<<<< HEAD
+=======
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
+>>>>>>> origin/web-1.1-juanma
                     break;
             }
         }
@@ -201,7 +208,7 @@ namespace UI.Web
         {
             this.formPanel.Visible = false;
             this.ClearForm();
-            this.EnableForm(false); 
+            this.EnableForm(false);
             //no funciona con nuevo
         }
 

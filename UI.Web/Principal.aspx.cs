@@ -39,6 +39,13 @@ namespace UI.Web
                     hlUsuarios.Visible = false;
                     hlPlanes.Visible = false;
                     hlDocentesCursos.Visible = false;
+<<<<<<< HEAD
+=======
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
+>>>>>>> origin/web-1.1-juanma
                     break;
             }
         }

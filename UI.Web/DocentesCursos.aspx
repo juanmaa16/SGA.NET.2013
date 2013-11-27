@@ -16,6 +16,13 @@
         <asp:HyperLink ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>
+<<<<<<< HEAD
+=======
+        <br />
+        <asp:HyperLink ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscribirse a materia</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/DocentesCursos.aspx">Asignar docente</asp:HyperLink>
+>>>>>>> origin/web-1.1-juanma
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
@@ -25,7 +32,11 @@
             <Columns>
                 <asp:BoundField HeaderText="id Curso" DataField="IdCurso" />
                 <asp:BoundField HeaderText="id Docente" DataField="IdDocente" />
+<<<<<<< HEAD
                  <asp:BoundField HeaderText="Cargo" DataField="Cargo" />
+=======
+                <asp:BoundField HeaderText="Cargo" DataField="Cargo" />
+>>>>>>> origin/web-1.1-juanma
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
             </Columns>
         </asp:GridView>
@@ -45,8 +56,12 @@
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+<<<<<<< HEAD
             <asp:LinkButton ID="cancelarLinkButton" runat="server" 
                 onclick="cancelarLinkButton_Click1">Cancelar</asp:LinkButton>
+=======
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click1">Cancelar</asp:LinkButton>
+>>>>>>> origin/web-1.1-juanma
         </asp:Panel>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">

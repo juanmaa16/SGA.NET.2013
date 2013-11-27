@@ -16,6 +16,10 @@
         <asp:HyperLink ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscribirse a materia</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlDocentesCursos" runat="server" NavigateUrl="~/DocentesCursos.aspx">Asignar docente</asp:HyperLink>
     </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
@@ -33,13 +37,11 @@
     </asp:Panel>
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="idPlanLabel" runat="server" Text="idPlan: "></asp:Label>
-        <asp:DropDownList ID="idPlanDDL" runat="server" DataSourceID="SqlDataSource1" 
-            DataTextField="desc_plan" DataValueField="id_plan">
+        <asp:DropDownList ID="idPlanDDL" runat="server" DataSourceID="SqlDataSource1" DataTextField="desc_plan"
+            DataValueField="id_plan">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:ConnStringLocal %>" 
-            SelectCommand="SELECT [id_plan], [desc_plan] FROM [planes]">
-        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnStringLocal %>"
+            SelectCommand="SELECT [id_plan], [desc_plan] FROM [planes]"></asp:SqlDataSource>
         <br />
         <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="DescripcionTextBox" runat="server" />
@@ -55,8 +57,7 @@
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server" 
-                onclick="cancelarLinkButton_Click1">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click1">Cancelar</asp:LinkButton>
         </asp:Panel>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">
