@@ -242,7 +242,6 @@ namespace UI.Web
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
-                    hlDocentesCursos.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
@@ -250,12 +249,10 @@ namespace UI.Web
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
                     editarLinkButton.Visible = false;
-                    hlDocentesCursos.Visible = false;
                     hlAlumnosInscripciones.Visible = false;
                     break;
                 case Usuario.TiposPersona.Administrador:
                     hlAlumnosInscripciones.Visible = false;
-                    break;
                     break;
             }
         }

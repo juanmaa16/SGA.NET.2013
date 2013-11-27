@@ -219,7 +219,6 @@ namespace UI.Web
                 case Usuario.TiposPersona.Administrador:
                     hlAlumnosInscripciones.Visible = false;
                     break;
-                    break;
             }
         }
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
