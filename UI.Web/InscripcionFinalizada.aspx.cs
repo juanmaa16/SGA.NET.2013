@@ -11,9 +11,8 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblMateria.Text = Request.Form["materia"];
-            lblComision.Text = Request.Form["comision"];
-
+            lblMateria.Text = Request.QueryString["materia"];
+            lblComision.Text = Request.QueryString["comision"];
         }
     }
 }

@@ -60,7 +60,7 @@ namespace UI.Web
                 }
             }
         }
-        private Curso CursoEntety
+        private Curso EntityCurso
         {
             get;
             set;
@@ -108,6 +108,7 @@ namespace UI.Web
             alumnoInscripcion.IdCurso = this.SelectedID;
             alumnoInscripcion.Nota = 0;
             alumnoInscripcion.Condicion = "Inscripto";
+            this.EntityCurso = this.CursoLogic.GetOne(this.SelectedID);
         }
 
         private void SaveEntity(AlumnoInscripcion alumnoInscripcion)
@@ -119,9 +120,10 @@ namespace UI.Web
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
             this.EntityAlumnoInscripcion = new AlumnoInscripcion();
+            this.EntityCurso = new Curso();
             this.LoadEntity(this.EntityAlumnoInscripcion);
             this.SaveEntity(this.EntityAlumnoInscripcion);
-            //Page.Response.Redirect("InscripcionFinalizada.aspx?comision="+this.gridView.Rows);
+            Page.Response.Redirect("InscripcionFinalizada.aspx?comision=" + this.EntityCurso.DescCom + "&materia=" + this.EntityCurso.DescMat);
             //this.LoadGrid();
         }
 

@@ -69,6 +69,7 @@
     <Content Include="images\bg-head.png" />
     <Content Include="images\sga-grey.png" />
     <Content Include="images\sga.png" />
+    <Content Include="InscripcionFinalizada.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Materias.aspx" />
     <Content Include="Planes.aspx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionFinalizada.aspx.cs">
+      <DependentUpon>InscripcionFinalizada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InscripcionFinalizada.aspx.designer.cs">
+      <DependentUpon>InscripcionFinalizada.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
