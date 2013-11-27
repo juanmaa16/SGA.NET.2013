@@ -4,26 +4,26 @@ CodeBehind="Alumnos.aspx.cs" Inherits="UI.Web.Alumnos" %>
 
 <asp:Content ID="opciones" ContentPlaceHolderID="opciones" runat="server">
     <asp:Panel ID="PanelPrincipal" runat="server">
-        <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
-        <br />
-        <asp:HyperLink ID="hlAlumnos" runat="server" NavigateUrl="~/Alumnos.aspx">Alumnos</asp:HyperLink>
-        <br />
-        <asp:HyperLink ID="hlProfesores" runat="server" NavigateUrl="~/Profesores.aspx">Profesores</asp:HyperLink>
-        <br />
-        <asp:HyperLink ID="hlEspecialidades" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink>
-        <br />
-        <asp:HyperLink ID="hlPlanes" runat="server" NavigateUrl="~/Planes.aspx">Planes</asp:HyperLink>
-        <br />
-        <asp:HyperLink ID="hlMaterias" runat="server" NavigateUrl="~/Materias.aspx">Materias</asp:HyperLink>
+        <asp:HyperLink ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscribirse a materia</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlCursos" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlComisiones" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink>
         <br />
-        <asp:HyperLink ID="hlAlumnosInscripciones" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Inscribirse a materia</asp:HyperLink>
+        <asp:HyperLink ID="hlMaterias" runat="server" NavigateUrl="~/Materias.aspx">Materias</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlEspecialidades" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlPlanes" runat="server" NavigateUrl="~/Planes.aspx">Planes</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlAlumnos" runat="server" NavigateUrl="~/Alumnos.aspx">Alumnos</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="hlProfesores" runat="server" NavigateUrl="~/Profesores.aspx">Profesores</asp:HyperLink>
+        <br />
+         <asp:HyperLink ID="hlUsuarios" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink>
         <br />
         <asp:HyperLink ID="hlDocentesCursos" runat="server" NavigateUrl="~/DocentesCursos.aspx">Asignar docente</asp:HyperLink>
-    </asp:Panel>
+        </asp:Panel>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
@@ -101,13 +101,13 @@ CodeBehind="Alumnos.aspx.cs" Inherits="UI.Web.Alumnos" %>
             Text="*"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
-        <asp:TextBox ID="claveTextBox" runat="server" />
+        <asp:TextBox ID="claveTextBox" runat="server" TextMode="Password" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="claveTextBox"
             ErrorMessage='Ingrese la clave' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave: "></asp:Label>
-        <asp:TextBox ID="repetirClaveTextBox" runat="server" />
+        <asp:TextBox ID="repetirClaveTextBox" runat="server" TextMode="Password" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="repetirClaveTextBox"
             ErrorMessage='Ingrese la clave nuevamente' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>

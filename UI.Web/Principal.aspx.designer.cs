@@ -22,49 +22,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Panel PanelPrincipal;
         
         /// <summary>
-        /// Control hlUsuarios.
+        /// Control hlAlumnosInscripciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
-        
-        /// <summary>
-        /// Control hlAlumnos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAlumnos;
-        
-        /// <summary>
-        /// Control hlEspecialidades.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlEspecialidades;
-        
-        /// <summary>
-        /// Control hlPlanes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlPlanes;
-        
-        /// <summary>
-        /// Control hlMaterias.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlMaterias;
+        protected global::System.Web.UI.WebControls.HyperLink hlAlumnosInscripciones;
         
         /// <summary>
         /// Control hlCursos.
@@ -85,13 +49,58 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.HyperLink hlComisiones;
         
         /// <summary>
-        /// Control hlAlumnosInscripciones.
+        /// Control hlMaterias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlAlumnosInscripciones;
+        protected global::System.Web.UI.WebControls.HyperLink hlMaterias;
+        
+        /// <summary>
+        /// Control hlEspecialidades.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlEspecialidades;
+        
+        /// <summary>
+        /// Control hlPlanes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlPlanes;
+        
+        /// <summary>
+        /// Control hlAlumnos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlAlumnos;
+        
+        /// <summary>
+        /// Control hlProfesores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlProfesores;
+        
+        /// <summary>
+        /// Control hlUsuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlUsuarios;
         
         /// <summary>
         /// Control hlDocentesCursos.

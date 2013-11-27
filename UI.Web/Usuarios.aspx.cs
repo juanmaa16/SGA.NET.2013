@@ -288,12 +288,14 @@ namespace UI.Web
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
                     hlDocentesCursos.Visible = false;
+                    hlAlumnos.Visible = true;
+                    hlProfesores.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
-                    hlPlanes.Visible = false;
                     hlDocentesCursos.Visible = false;
                     hlAlumnosInscripciones.Visible = false;
+                    hlProfesores.Visible = false;
                     break;
                 case Usuario.TiposPersona.Administrador:
                     hlAlumnosInscripciones.Visible = false;

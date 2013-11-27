@@ -287,12 +287,17 @@ namespace UI.Web
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
                     hlDocentesCursos.Visible = false;
+                    hlAlumnos.Visible = false;
+                    hlProfesores.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
+                    nuevoLinkButton.Visible = false;
+                    eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     hlUsuarios.Visible = false;
-                    hlPlanes.Visible = false;
                     hlDocentesCursos.Visible = false;
                     hlAlumnosInscripciones.Visible = false;
+                    hlProfesores.Visible = false;
                     break;
                 case Usuario.TiposPersona.Administrador:
                     hlAlumnosInscripciones.Visible = false;
