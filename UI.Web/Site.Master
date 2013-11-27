@@ -7,7 +7,23 @@
     <style type="text/css">
         body
         {
-            background-color: #B3DD8D;
+            background-color: #DBEAF9;
+            /*background-image: url('images/bg-body.png');*/
+            background-repeat: repeat-x;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            /*background-size: cover;*/
+        }
+        a:link,a:visited
+        {
+            color:#2E4458;
+            text-decoration:none;
+        }
+        a:hover
+        {
+            color:#2E4458;
+            text-decoration:underline;
         }
         .style1
         {
@@ -23,7 +39,9 @@
         }
         #header
         {
-            background-color: #576E4E;
+            /*background-color: #67c4e5;*/
+            background-image: url('images/bg-head.png');
+            background-repeat: repeat-x;
             height: 93px;
             padding-left: 20px;
         }
@@ -31,18 +49,23 @@
         {
             background-color: #576E4E;
         }
+        /*span { display: inline-block; width: 140px; text-align: right; }*/
+        button, input, select, textarea,span
+        {
+            display: inline-block;
+            width: 150px;
+        }
     </style>
 </head>
 <body>
     <table class="style1">
         <tr>
             <td id="header" colspan="2">
-                <asp:HyperLink ID="home" runat="server" ImageUrl="images/sga.png" 
-                    NavigateUrl="~/Principal.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="home" runat="server" ImageUrl="images/sga-grey.png" NavigateUrl="~/Principal.aspx"></asp:HyperLink>
             </td>
         </tr>
         <tr id="contenedor">
-            <td id="menuLateral">
+            <td id="menuLateral" valign="top">
                 <asp:ContentPlaceHolder ID="opciones" runat="server">
                 </asp:ContentPlaceHolder>
             </td>
@@ -57,11 +80,11 @@
                 </form>
             </td>
         </tr>
-        <tr>
+        <!--<tr>
             <td colspan="2" id="footer">
                 Copyright 2013
             </td>
-        </tr>
+        </tr>-->
     </table>
 </body>
 </html>

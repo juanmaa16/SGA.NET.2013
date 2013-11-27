@@ -64,6 +64,9 @@
     <Content Include="Default.aspx" />
     <Content Include="DocentesCursos.aspx" />
     <Content Include="Especialidades.aspx" />
+    <Content Include="images\bg-body.png" />
+    <Content Include="images\bg-head.png" />
+    <Content Include="images\sga-grey.png" />
     <Content Include="images\sga.png" />
     <Content Include="Login.aspx" />
     <Content Include="Materias.aspx" />
