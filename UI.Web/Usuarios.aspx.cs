@@ -195,8 +195,8 @@ namespace UI.Web
                 case FormModes.Alta:
                     this.EntityUsuario = new Usuario();
                     this.EntityPersona = new Persona();
-                    this.LoadEntity(this.EntityUsuario,this.EntityPersona);
-                    this.SaveEntity(this.EntityUsuario,this.EntityPersona);
+                    this.LoadEntity(this.EntityUsuario, this.EntityPersona);
+                    this.SaveEntity(this.EntityUsuario, this.EntityPersona);
                     this.LoadGrid();
                     break;
                 case FormModes.Baja:
@@ -210,8 +210,8 @@ namespace UI.Web
                     this.EntityPersona.IdPersona = this.SelectedID;
                     this.EntityUsuario.State = BusinessEntity.States.Modified;
                     this.EntityPersona.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.EntityUsuario,this.EntityPersona);
-                    this.SaveEntity(this.EntityUsuario,this.EntityPersona);
+                    this.LoadEntity(this.EntityUsuario, this.EntityPersona);
+                    this.SaveEntity(this.EntityUsuario, this.EntityPersona);
                     this.LoadGrid();
                     break;
                 default:
@@ -253,8 +253,8 @@ namespace UI.Web
 
         private void DeleteEntity(int id)
         {
-            this.LogicUsuario.Delete(id); 
-            this.LogicPersona.Delete(id);           
+            this.LogicUsuario.Delete(id);
+            this.LogicPersona.Delete(id);
         }
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
@@ -287,10 +287,16 @@ namespace UI.Web
                     hlUsuarios.Visible = false;
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
+                    hlDocentesCursos.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
                     hlPlanes.Visible = false;
+                    hlDocentesCursos.Visible = false;
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
                     break;
             }
         }

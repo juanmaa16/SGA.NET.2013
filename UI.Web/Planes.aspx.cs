@@ -187,10 +187,16 @@ namespace UI.Web
                     hlUsuarios.Visible = false;
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
+                    hlDocentesCursos.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
                     hlPlanes.Visible = false;
+                    hlDocentesCursos.Visible = false;
+                    hlAlumnosInscripciones.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
                     break;
             }
         }
@@ -199,7 +205,7 @@ namespace UI.Web
         {
             this.formPanel.Visible = false;
             this.ClearForm();
-            this.EnableForm(false); 
+            this.EnableForm(false);
             //no funciona con nuevo
         }
 
