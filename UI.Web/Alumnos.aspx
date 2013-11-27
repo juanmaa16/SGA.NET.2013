@@ -1,5 +1,6 @@
-﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
+﻿<%@ Page Title="Alumnos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+CodeBehind="Alumnos.aspx.cs" Inherits="UI.Web.Alumnos" %>
+
 
 <asp:Content ID="opciones" ContentPlaceHolderID="opciones" runat="server">
     <asp:Panel ID="PanelPrincipal" runat="server">

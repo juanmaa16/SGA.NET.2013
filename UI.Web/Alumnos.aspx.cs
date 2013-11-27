@@ -9,9 +9,8 @@ using Negocio;
 
 namespace UI.Web
 {
-    public partial class Usuarios : WebUI
+    public partial class Alumnos : WebUI
     {
-
         UsuarioLogic _logicUsuario;
         PersonaLogic _logicPersona;
 
@@ -41,7 +40,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.LogicUsuario.GetAll();
+            this.gridView.DataSource = this.LogicUsuario.GetAllAlumnos();
             this.gridView.DataBind();
         }
 
@@ -288,10 +287,13 @@ namespace UI.Web
                     hlEspecialidades.Visible = false;
                     hlPlanes.Visible = false;
                     hlDocentesCursos.Visible = false;
-                    hlAlumnos.Visible = true;
+                    hlAlumnos.Visible = false;
                     hlProfesores.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
+                    nuevoLinkButton.Visible = false;
+                    eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     hlUsuarios.Visible = false;
                     hlDocentesCursos.Visible = false;
                     hlAlumnosInscripciones.Visible = false;

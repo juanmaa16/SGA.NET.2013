@@ -25,6 +25,16 @@ namespace Negocio
             return  uData.GetAll();
         }
 
+        public List<Usuario> GetAllAlumnos()
+        {
+            return uData.GetAllAlumnos();
+        }
+
+
+        public List<Usuario> GetAllProfesores()
+        {
+            return uData.GetAllProfesores();
+        }
         public Usuario GetOne(int ID)
         {
             return uData.GetOne(ID);

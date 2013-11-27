@@ -99,6 +99,80 @@ namespace Data.Database
             return usuarios;
         }
 
+        public List<Usuario> GetAllAlumnos()
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios usu inner join personas per on usu.id_persona=per.id_persona where per.tipo_persona = 0", sqlConn);
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                while (drUsuarios.Read())
+                {
+                    Usuario usr = new Usuario();
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Password = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.Email = (string)drUsuarios["email"];
+
+                    usuarios.Add(usr);
+                }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de alumnos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usuarios;
+        }
+
+
+        public List<Usuario>GetAllProfesores()
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios usu inner join personas per on usu.id_persona=per.id_persona where per.tipo_persona = 1", sqlConn);
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                while (drUsuarios.Read())
+                {
+                    Usuario usr = new Usuario();
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Password = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.Email = (string)drUsuarios["email"];
+
+                    usuarios.Add(usr);
+                }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de alumnos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usuarios;
+        }
 
 
         public Entidades.Usuario GetOne(int ID)
