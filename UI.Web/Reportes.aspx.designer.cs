@@ -10,7 +10,7 @@
 namespace UI.Web {
     
     
-    public partial class Reporte_planes {
+    public partial class Reportes {
         
         /// <summary>
         /// Control PanelPrincipal.
@@ -112,30 +112,30 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.HyperLink hlDocentesCursos;
         
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control OpcionesReportes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Panel OpcionesReportes;
         
         /// <summary>
-        /// Control ReportViewer1.
+        /// Control rpCursos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
+        protected global::System.Web.UI.WebControls.HyperLink rpCursos;
         
         /// <summary>
-        /// Control ObjectDataSource1.
+        /// Control rpPlanes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.HyperLink rpPlanes;
     }
 }
