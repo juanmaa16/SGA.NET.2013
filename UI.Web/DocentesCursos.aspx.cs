@@ -244,6 +244,8 @@ namespace UI.Web
                     editarLinkButton.Visible = false;
                     hlAlumnos.Visible = false;
                     hlProfesores.Visible = false;
+                    hlReportes.Visible = false;
+                    hlCargaNota.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
@@ -252,9 +254,11 @@ namespace UI.Web
                     editarLinkButton.Visible = false;
                     hlAlumnosInscripciones.Visible = false;
                     hlProfesores.Visible = false;
+                    hlReportes.Visible = false;
                     break;
                 case Usuario.TiposPersona.Administrador:
                     hlAlumnosInscripciones.Visible = false;
+                    hlCargaNota.Visible = false;
                     break;
             }
         }

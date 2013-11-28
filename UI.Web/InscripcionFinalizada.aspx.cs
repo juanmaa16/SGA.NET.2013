@@ -38,15 +38,19 @@ namespace UI.Web
                     hlDocentesCursos.Visible = false;
                     hlAlumnos.Visible = false;
                     hlProfesores.Visible = false;
+                    hlReportes.Visible = false;
+                    hlCargaNota.Visible = false;
                     break;
                 case Usuario.TiposPersona.Docente:
                     hlUsuarios.Visible = false;
                     hlDocentesCursos.Visible = false;
                     hlAlumnosInscripciones.Visible = false;
                     hlProfesores.Visible = false;
+                    hlReportes.Visible = false;
                     break;
                 case Usuario.TiposPersona.Administrador:
                     hlAlumnosInscripciones.Visible = false;
+                    hlCargaNota.Visible = false;
                     break;
             }
         }
