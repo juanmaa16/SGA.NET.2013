@@ -52,13 +52,54 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadDropDownList();
+            if (!this.Logueado())
+            {
+                Page.Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                this.cargaModulos();
+                if (!this.IsPostBack)
+                {
+                    this.LoadDropDownList();
+                }
+            }
+            
         }
 
         protected void cargarNotasLinkButton_Click(object sender, EventArgs e)
         {
             string url = "panelNotas.aspx?idCurso=" + CursosDocenteDDL.SelectedValue;
             Page.Response.Redirect(url);
+        }
+
+        private void cargaModulos()
+        {
+            Usuario.TiposPersona tipoPersona = (Usuario.TiposPersona)Session["TipoPersona"];
+            switch (tipoPersona)
+            {
+                case Usuario.TiposPersona.Alumno:
+                    hlUsuarios.Visible = false;
+                    hlEspecialidades.Visible = false;
+                    hlPlanes.Visible = false;
+                    hlDocentesCursos.Visible = false;
+                    hlAlumnos.Visible = false;
+                    hlProfesores.Visible = false;
+                    hlReportes.Visible = false;
+                    hlCargaNota.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Docente:
+                    hlUsuarios.Visible = false;
+                    hlDocentesCursos.Visible = false;
+                    hlAlumnosInscripciones.Visible = false;
+                    hlProfesores.Visible = false;
+                    hlReportes.Visible = false;
+                    break;
+                case Usuario.TiposPersona.Administrador:
+                    hlAlumnosInscripciones.Visible = false;
+                    hlCargaNota.Visible = false;
+                    break;
+            }
         }
     }
 }
