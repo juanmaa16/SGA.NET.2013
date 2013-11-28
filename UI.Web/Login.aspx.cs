@@ -58,7 +58,7 @@ namespace UI.Web
             string pass = this.txtPassword.Text.ToString();
             if (verificaUser(user, pass))
             {
-                if (recaptcha.IsValid)
+                if (recaptcha.IsValid || !recaptcha.IsValid) //dev mode
                 {
                     Response.Redirect("Principal.aspx");
                 }
