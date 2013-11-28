@@ -64,7 +64,7 @@
         <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
         <br />
         <asp:Label ID="lblTelefono" runat="server" Text="Telefono: "></asp:Label>
-        <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="telefonoTextBox" runat="server" onkeypress="return isNumberKey(event)"></asp:TextBox>
         <br />
         <asp:Label ID="lblDireccion" runat="server" Text="Dirección: "></asp:Label>
         <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
@@ -83,10 +83,10 @@
             <WeekendDayStyle BackColor="#FFFFCC" />
         </asp:Calendar>
         <asp:Label ID="lblLegajo" runat="server" Text="Legajo: "></asp:Label>
-        <asp:TextBox ID="legajoTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="legajoTextBox" runat="server" onkeypress="return isNumberKey(event)"></asp:TextBox>
         <br />
         <asp:Label ID="lblIdPlan" runat="server" Text="ID Plan"></asp:Label>
-        <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="idPlanTextBox" runat="server" onkeypress="return isNumberKey(event)"></asp:TextBox>
         <br />
         <asp:Label ID="lblTipoPersona" runat="server" Text="Tipo Persona"></asp:Label>
         <asp:DropDownList ID="TipoPersonaDDL" runat="server">

@@ -57,13 +57,13 @@
             Text="*"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="hsSemanalesLabel" runat="server" Text="Hs Semanales"></asp:Label>
-        <asp:TextBox ID="hsSemanalesTextBox" runat="server" />
+        <asp:TextBox ID="hsSemanalesTextBox" runat="server" onkeypress="return isNumberKey(event)" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="hsSemanalesTextBox"
             ErrorMessage='Ingrese las horas semanales' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="hsTotalesLabel" runat="server" Text="Hs Totales"></asp:Label>
-        <asp:TextBox ID="hsTotalesTextBox" runat="server" />
+        <asp:TextBox ID="hsTotalesTextBox" runat="server" onkeypress="return isNumberKey(event)" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="hsTotalesTextBox"
             ErrorMessage='Ingrese las horas totales' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>

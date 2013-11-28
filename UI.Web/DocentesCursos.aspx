@@ -42,10 +42,10 @@
     </asp:Panel>
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="idCursoLabel" runat="server" Text="ID Curso: "></asp:Label>
-        <asp:TextBox ID="IDCursoTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="IDCursoTextBox" runat="server" onkeypress="return isNumberKey(event)"></asp:TextBox>
         <br />
         <asp:Label ID="idDocenteLabel" runat="server" Text="ID Docente: "></asp:Label>
-        <asp:TextBox ID="IDDocenteTextBox" runat="server" />
+        <asp:TextBox ID="IDDocenteTextBox" runat="server" onkeypress="return isNumberKey(event)"/>
         <br />
         <asp:Label ID="cargoLabel" runat="server" Text="Cargo: "></asp:Label>
         <asp:DropDownList ID="tipoCargoDDL" runat="server">

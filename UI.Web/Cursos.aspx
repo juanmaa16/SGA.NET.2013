@@ -58,13 +58,13 @@
             SelectCommand="SELECT [id_comision], [desc_comision] FROM [comisiones]"></asp:SqlDataSource>
         <br />
         <asp:Label ID="anioCalendario" runat="server" Text="Año (calendario)"></asp:Label>
-        <asp:TextBox ID="anioCalendarioTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="anioCalendarioTextBox" runat="server" onkeypress="return isNumberKey(event)"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="anioCalendarioTextBox"
             ErrorMessage='Ingrese el año' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="cupoLabel" runat="server" Text="cupo: " style="height: 19px"></asp:Label>
-        <asp:TextBox ID="cupoTextBox" runat="server" />
+        <asp:TextBox ID="cupoTextBox" runat="server" onkeypress="return isNumberKey(event)" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="cupoTextBox"
             ErrorMessage='Ingrese el cupo' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>

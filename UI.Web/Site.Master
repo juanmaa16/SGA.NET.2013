@@ -49,13 +49,17 @@
         {
             background-color: #576E4E;
         }
-        /*span { display: inline-block; width: 140px; text-align: right; }*/
-        button, input, select, textarea,span
+         button, input, select, textarea,span
         {
             display: inline-block;
             width: 150px;
         }
+        .reports span,.reports select,.reports textarea, .reports input
+        {
+            width:100%;
+        }
     </style>
+    <script language="javascript" type="text/javascript" src="js/isNumberKey.js"></script>
 </head>
 <body>
     <table class="style1">

@@ -56,7 +56,7 @@
             Text="*"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="anioEspecialidad" runat="server" Text="Año especialidad: "></asp:Label>
-        <asp:TextBox ID="anioEspecialidadTextBox" runat="server" />
+        <asp:TextBox ID="anioEspecialidadTextBox" runat="server" onkeypress="return isNumberKey(event)"/>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="anioEspecialidadTextBox"
             ErrorMessage='Ingrese el id de plan' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>

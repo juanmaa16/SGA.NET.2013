@@ -76,6 +76,7 @@
     <Content Include="images\sga-grey.png" />
     <Content Include="images\sga.png" />
     <Content Include="InscripcionFinalizada.aspx" />
+    <Content Include="js\isNumberKey.js" />
     <Content Include="Login.aspx" />
     <Content Include="Materias.aspx" />
     <Content Include="panelNotas.aspx" />
