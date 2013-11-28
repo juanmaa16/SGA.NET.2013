@@ -7,4 +7,7 @@
     <br />
     <asp:LinkButton ID="cargarNotasLinkButton" runat="server" 
         onclick="cargarNotasLinkButton_Click">Cargar notas</asp:LinkButton>
+    <br />
+    <asp:Label ID="ErrorLabel" runat="server" Text="Label" Visible="False" 
+        Width="446px"></asp:Label>
 </asp:Content>

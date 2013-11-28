@@ -30,13 +30,23 @@ namespace UI.Web
             //this.CursosDocenteDDL.DataBind();
             int idDocente = (int)Session["IdUsuario"];
             List<DocenteCurso> vDocentes = this.Logic.GetAllByDocente(idDocente);
-            ListItem item = new ListItem();
-            foreach (DocenteCurso dc in vDocentes)
+            if (vDocentes.Count < 1)
             {
-                item = new ListItem();
-                item.Value = dc.IdCurso.ToString();
-                item.Text = dc.DescMateria;
-                CursosDocenteDDL.Items.Add(item);
+                ErrorLabel.Visible = true;
+                CursosDocenteDDL.Visible = false;
+                cargarNotasLinkButton.Visible = false;
+                this.ErrorLabel.Text = "No hay cursos para cargar notas";
+            }
+            else
+            {
+                ListItem item = new ListItem();
+                foreach (DocenteCurso dc in vDocentes)
+                {
+                    item = new ListItem();
+                    item.Value = dc.IdCurso.ToString();
+                    item.Text = dc.DescMateria;
+                    CursosDocenteDDL.Items.Add(item);
+                }
             }
         }
 

@@ -175,6 +175,7 @@ namespace Data.Database
             {
                 Exception ExcepcionManejada =
                 new Exception("Error al recuperar lista de docentes curso", ex);
+                return null;
                 throw ExcepcionManejada;
             }
             finally
