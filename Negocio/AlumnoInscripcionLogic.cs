@@ -24,6 +24,12 @@ namespace Negocio
             return aiData.GetAll();
         }
 
+        public List<AlumnoInscripcion> GetAllByIdCurso(int IdCurso)
+        {
+            return aiData.GetAllByIdCurso(IdCurso);
+        }
+
+
         public AlumnoInscripcion GetOne(int IdAlumno, int IdCurso)
         {
             return aiData.GetOne(IdAlumno, IdCurso);

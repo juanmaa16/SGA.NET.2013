@@ -78,6 +78,7 @@
     <Content Include="InscripcionFinalizada.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Materias.aspx" />
+    <Content Include="panelNotas.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Profesores.aspx" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="Materias.aspx.designer.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panelNotas.aspx.cs">
+      <DependentUpon>panelNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panelNotas.aspx.designer.cs">
+      <DependentUpon>panelNotas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Planes.aspx.cs">
       <DependentUpon>Planes.aspx</DependentUpon>

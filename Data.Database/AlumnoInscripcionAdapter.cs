@@ -43,6 +43,43 @@ namespace Data.Database
             return alumnosInscripciones;
         }
 
+
+        public List<AlumnoInscripcion> GetAllByIdCurso(int IdCurso)
+        {
+            List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdAlumnosInscripciones = new SqlCommand("select * from alumnos_inscripciones ai inner join personas p on p.id_persona=ai.id_alumno inner join cursos c on c.id_curso=ai.id_curso where c.id_curso=@id_curso", sqlConn);
+                cmdAlumnosInscripciones.Parameters.Add("@id_curso", SqlDbType.Int).Value = IdCurso;
+                SqlDataReader drAlumnosInscripciones = cmdAlumnosInscripciones.ExecuteReader();
+
+                while (drAlumnosInscripciones.Read())
+                {
+                    AlumnoInscripcion alin = new AlumnoInscripcion();
+                    alin.IdAlumno = (int)drAlumnosInscripciones["id_alumno"];
+                    alin.IdCurso = (int)drAlumnosInscripciones["id_curso"];
+                    alin.Condicion = (string)drAlumnosInscripciones["condicion"];
+                    alin.Nota = (int)drAlumnosInscripciones["nota"];
+                    alin.NombreAlumno = (string)drAlumnosInscripciones["nombre"];
+                    alin.ApellidoAlumno = (string)drAlumnosInscripciones["apellido"];
+                    alumnosInscripciones.Add(alin);
+                }
+                drAlumnosInscripciones.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return alumnosInscripciones;
+        }
+
         public Entidades.AlumnoInscripcion GetOne(int IdAlumno, int IdCurso)
         {
             AlumnoInscripcion alin = new AlumnoInscripcion();
@@ -60,6 +97,8 @@ namespace Data.Database
                     alin.IdCurso = (int)drAlumnosInscripciones["id_curso"];
                     alin.Condicion = (string)drAlumnosInscripciones["condicion"];
                     alin.Nota = (int)drAlumnosInscripciones["nota"];
+                    alin.NombreAlumno = (string)drAlumnosInscripciones["nombre"];
+                    alin.ApellidoAlumno = (string)drAlumnosInscripciones["apellido"];
                 }
                 drAlumnosInscripciones.Close();
             }
