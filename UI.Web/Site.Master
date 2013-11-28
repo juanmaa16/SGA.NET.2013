@@ -4,61 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Academia</title>
-    <style type="text/css">
-        body
-        {
-            background-color: #DBEAF9;
-            /*background-image: url('images/bg-body.png');*/
-            background-repeat: repeat-x;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            /*background-size: cover;*/
-        }
-        a:link,a:visited
-        {
-            color:#2E4458;
-            text-decoration:none;
-        }
-        a:hover
-        {
-            color:#2E4458;
-            text-decoration:underline;
-        }
-        .style1
-        {
-            width: 100%;
-        }
-        #menuLateral
-        {
-            width: 20%;
-        }
-        #principal
-        {
-            width: 80%;
-        }
-        #header
-        {
-            /*background-color: #67c4e5;*/
-            background-image: url('images/bg-head.png');
-            background-repeat: repeat-x;
-            height: 93px;
-            padding-left: 20px;
-        }
-        #footer
-        {
-            background-color: #576E4E;
-        }
-         button, input, select, textarea,span
-        {
-            display: inline-block;
-            width: 150px;
-        }
-        .reports span,.reports select,.reports textarea, .reports input
-        {
-            width:100%;
-        }
-    </style>
+    <link type="text/css" rel="Stylesheet" href="Styles/sga.css" />
     <script language="javascript" type="text/javascript" src="js/isNumberKey.js"></script>
 </head>
 <body>

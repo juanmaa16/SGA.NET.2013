@@ -90,6 +90,7 @@
     <Content Include="Reporte_materias.aspx" />
     <Content Include="Reporte_planes.aspx" />
     <Content Include="Reporte_usuarios.aspx" />
+    <Content Include="Styles\sga.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
