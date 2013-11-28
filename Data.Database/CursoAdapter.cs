@@ -52,7 +52,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand("select * from cursos cur inner join comisiones com on cur.id_comision=com.id_comision inner join materias mat on cur.id_materia=mat.id_materia left join (select id_curso,COUNT(*) cant from alumnos_inscripciones group by id_curso) temp on temp.id_curso=cur.id_curso where mat.id_plan=@id_plan and cur.anio_calendario=year(getdate()) and temp.cant<cur.cupo;", sqlConn);
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos cur inner join comisiones com on cur.id_comision=com.id_comision inner join materias mat on cur.id_materia=mat.id_materia left join (select id_curso,COUNT(*) cant from alumnos_inscripciones group by id_curso) temp on temp.id_curso=cur.id_curso where mat.id_plan=@id_plan and cur.anio_calendario=year(getdate()) and (temp.cant<cur.cupo or temp.cant is null)", sqlConn);
                 cmdCursos.Parameters.Add("@id_plan", SqlDbType.Int).Value = IdPlan;
                 SqlDataReader drCursos = cmdCursos.ExecuteReader();
 
