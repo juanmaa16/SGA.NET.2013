@@ -20,10 +20,19 @@ namespace UI.Web
             }
             else
             {
-                this.cargaModulos();
+                Usuario.TiposPersona tipoPersona = (Usuario.TiposPersona)Session["TipoPersona"];
+                if (tipoPersona != Usuario.TiposPersona.Administrador)
+                {
+                    Page.Response.Redirect("principal.aspx");
+                }
+                else
+                {
+                    this.cargaModulos();
+                }
+
             }
         }
-        
+
         private void cargaModulos()
         {
             Usuario.TiposPersona tipoPersona = (Usuario.TiposPersona)Session["TipoPersona"];
@@ -50,6 +59,7 @@ namespace UI.Web
                     hlAlumnosInscripciones.Visible = false;
                     hlCargaNota.Visible = false;
                     break;
-            }}
+            }
+        }
     }
 }

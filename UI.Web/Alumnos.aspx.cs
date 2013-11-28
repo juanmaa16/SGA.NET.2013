@@ -53,10 +53,18 @@ namespace UI.Web
             }
             else
             {
-                this.cargaModulos();
-                if (!this.IsPostBack)
+                Usuario.TiposPersona tipoPersona = (Usuario.TiposPersona)Session["TipoPersona"];
+                if (tipoPersona == Usuario.TiposPersona.Alumno)
                 {
-                    this.LoadGrid();
+                    Page.Response.Redirect("principal.aspx");
+                }
+                else
+                {
+                    this.cargaModulos();
+                    if (!this.IsPostBack)
+                    {
+                        this.LoadGrid();
+                    }
                 }
             }
         }
