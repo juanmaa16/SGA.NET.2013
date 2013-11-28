@@ -33,9 +33,9 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false" SelectedRowStyle-BackColor="Black"
             SelectedRowStyle-ForeColor="White" DataKeyNames="idComision" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
             <Columns>
-                <asp:BoundField HeaderText="idComision" DataField="idComision" />
-                <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
-                <asp:BoundField HeaderText="anioEspecialidad" DataField="anioEspecialidad" />
+                <asp:BoundField HeaderText="ID Comisión" DataField="idComision" />
+                <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />
+                <asp:BoundField HeaderText="Año Especialidad" DataField="anioEspecialidad" />
                 <asp:BoundField HeaderText="Plan" DataField="descPlan" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
             </Columns>

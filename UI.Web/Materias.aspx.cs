@@ -118,8 +118,8 @@ namespace UI.Web
         {
             materia.IdPlan = int.Parse(this.idPlanDDL.Text);
             materia.Descripcion = this.descMateriaTextBox.Text;
-            materia.HSemanales = int.Parse(this.hsSemanalesTextBox.Text);
-            materia.HTotales = int.Parse(this.hsTotalesTextBox.Text);
+            materia.HSemanales = Int32.Parse(this.hsSemanalesTextBox.Text);
+            materia.HTotales = Int32.Parse(this.hsTotalesTextBox.Text);
         }
 
         private void SaveEntity(Materia materia)

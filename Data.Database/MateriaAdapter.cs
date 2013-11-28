@@ -154,7 +154,7 @@ namespace Data.Database
                     "values( @desc_materia,@hs_semanales,@hs_totales,@id_plan) select @@identity AS id_materia", sqlConn);
                 cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
                 cmdSave.Parameters.Add("@hs_semanales", SqlDbType.VarChar, 50).Value = materia.HSemanales;
-                cmdSave.Parameters.Add("@hs_totales", SqlDbType.Bit).Value = materia.HTotales;
+                cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HTotales;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = materia.IdPlan;
                 materia.IdMateria = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }

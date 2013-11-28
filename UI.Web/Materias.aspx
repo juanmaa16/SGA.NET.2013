@@ -43,26 +43,26 @@
         </asp:GridView>
     </asp:Panel>
     <asp:Panel ID="formPanel" Visible="false" runat="server">
-        <asp:Label ID="idPlan" runat="server" Text="idPlan: "></asp:Label>
+        <asp:Label ID="idPlan" runat="server" Text="ID Plan: "></asp:Label>
         <asp:DropDownList ID="idPlanDDL" runat="server" DataSourceID="SqlDataSource1" DataTextField="desc_plan"
             DataValueField="id_plan">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnStringLocal %>"
             SelectCommand="SELECT [id_plan], [desc_plan] FROM [planes]"></asp:SqlDataSource>
         <br />
-        <asp:Label ID="descMateria" runat="server" Text="descMateria: "></asp:Label>
+        <asp:Label ID="descMateria" runat="server" Text="Descripción:"></asp:Label>
         <asp:TextBox ID="descMateriaTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="descMateriaTextBox"
             ErrorMessage='Ingrese la descripción' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="hsSemanalesLabel" runat="server" Text="hsSemanales: "></asp:Label>
+        <asp:Label ID="hsSemanalesLabel" runat="server" Text="Hs Semanales"></asp:Label>
         <asp:TextBox ID="hsSemanalesTextBox" runat="server" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="hsSemanalesTextBox"
             ErrorMessage='Ingrese las horas semanales' EnableClientScript="true" SetFocusOnError="true"
             Text="*"></asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="hsTotalesLabel" runat="server" Text="hsTotales: "></asp:Label>
+        <asp:Label ID="hsTotalesLabel" runat="server" Text="Hs Totales"></asp:Label>
         <asp:TextBox ID="hsTotalesTextBox" runat="server" />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="hsTotalesTextBox"
             ErrorMessage='Ingrese las horas totales' EnableClientScript="true" SetFocusOnError="true"
