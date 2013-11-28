@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using Negocio;
+using Util;
 
 namespace UI.Web
 {
@@ -193,6 +194,12 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Alta:
+                    if (!Utilidades.validaClavesIguales(claveTextBox.Text, repetirClaveTextBox.Text))
+                    {   
+                        string script = @"<script language='javascript'>alert('Las contraseñas no coinciden');</script>";
+                        Page.RegisterStartupScript("alerta", script);
+                        break;
+                    }
                     this.EntityUsuario = new Usuario();
                     this.EntityPersona = new Persona();
                     this.LoadEntity(this.EntityUsuario, this.EntityPersona);

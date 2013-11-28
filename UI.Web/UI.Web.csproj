@@ -342,6 +342,10 @@
       <Project>{6F72C54C-8F06-4FFE-825C-FC2E677B6A3F}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{3F4BD110-200E-4BC0-8D2F-F966CAE63CC9}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Report1.rdlc" />
