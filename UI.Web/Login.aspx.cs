@@ -58,11 +58,18 @@ namespace UI.Web
             string pass = this.txtPassword.Text.ToString();
             if (verificaUser(user, pass))
             {
-                Response.Redirect("Principal.aspx");
+                if (recaptcha.IsValid)
+                {
+                    Response.Redirect("Principal.aspx");
+                }
+                else
+                {
+                    Page.Response.Write("<div style='position:absolute;top:350px;left:300px;color:red'>Captcha incorrecto</div>");
+                }
             }
             else
             {
-                Page.Response.Write("Usuario y/o Contraseña incorrectos");
+                Page.Response.Write("<div style='position:absolute;top:350px;left:300px;color:red'>Usuario y/o Contraseña incorrectos</div>");
             }
         }
     }
