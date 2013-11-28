@@ -10,6 +10,7 @@ namespace Entidades
         private TiposCargo _cargo;
         private int _idCurso;
         private int _idDocente;
+        private string _descMateria;
 
         public TiposCargo Cargo
         {
@@ -33,6 +34,12 @@ namespace Entidades
         {
             Titular,
             Provisional
+        }
+
+        public string DescMateria
+        {
+            get { return _descMateria; }
+            set { _descMateria = value; }
         }
     }
 }

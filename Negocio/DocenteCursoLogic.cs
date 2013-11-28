@@ -38,5 +38,10 @@ namespace Negocio
         {
             dcData.Save(docentecurso);
         }
+
+        public List<DocenteCurso> GetAllByDocente(int idDocente)
+        {
+            return dcData.GetAllByDocente(idDocente);
+        }
     }
 }

@@ -64,6 +64,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Alumnos.aspx" />
     <Content Include="AlumnosInscripciones.aspx" />
+    <Content Include="cargaNota.aspx" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Cursos.aspx" />
     <Content Include="Default.aspx" />
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="AlumnosInscripciones.aspx.designer.cs">
       <DependentUpon>AlumnosInscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cargaNota.aspx.cs">
+      <DependentUpon>cargaNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cargaNota.aspx.designer.cs">
+      <DependentUpon>cargaNota.aspx</DependentUpon>
     </Compile>
     <Compile Include="Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
